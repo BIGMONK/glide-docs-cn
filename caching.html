@@ -44,7 +44,7 @@
 <meta property="og:site_name" content="Glide v4 中文站">
 <meta property="og:description" content="原文链接：点击查看 Glide里的缓存默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：  活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？ 内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？ 资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？ 数据来源 (Data)">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:16:51.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:56:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="原文链接：点击查看 Glide里的缓存默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：  活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？ 内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？ 资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？ 数据来源 (Data)"> -->
@@ -105,10 +105,10 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .diskCacheStrategy(DiskCacheStrategy.NONE)</div><div class="line">  .skipMemoryCache(<span class="keyword">true</span>)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
 <p>虽然提供了这些办法让你跳过缓存，但你通常应该不会想这么做。从缓存中加载一个图片，要比拉取-解码-转换成一张新图片的完整流程快得多。</p>
 <p>如果你只是想更新缓存中的某个条目，请继续阅读下面关于[<code>invalidation</code>][17]一节的介绍。</p>
-<h4 id="Implementation" class="article-heading"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation<a class="article-anchor" href="#Implementation" aria-hidden="true"></a></h4><p>如果内置的选项不满足你的需求，你也可以编写你自己的[<code>DiskCache</code>][13]实现。请查看[配置][14]页获得更多信息。</p>
-<h3 id="Cache-Invalidation" class="article-heading"><a href="#Cache-Invalidation" class="headerlink" title="Cache Invalidation"></a>Cache Invalidation<a class="article-anchor" href="#Cache-Invalidation" aria-hidden="true"></a></h3><p>因为磁盘缓存使用的是哈希键，所以<strong>并没有</strong>一个比较好的方式来简单地删除某个特定url或文件路径对应的所有缓存文件。如果你只允许加载或缓存原始图片的话，问题可能会变得更简单，但因为Glide还会缓存缩略图和提供多种变换(<code>transformation</code>)，它们中的任何一个都会导致在缓存中创建一个新的文件，而要跟踪和删除一个图片的所有版本无疑是困难的。</p>
+<h4 id="实现" class="article-heading"><a href="#实现" class="headerlink" title="实现"></a>实现<a class="article-anchor" href="#实现" aria-hidden="true"></a></h4><p>如果内置的选项不满足你的需求，你也可以编写你自己的[<code>DiskCache</code>][13]实现。请查看[配置][14]页获得更多信息。</p>
+<h3 id="缓存的刷新" class="article-heading"><a href="#缓存的刷新" class="headerlink" title="缓存的刷新"></a>缓存的刷新<a class="article-anchor" href="#缓存的刷新" aria-hidden="true"></a></h3><p>因为磁盘缓存使用的是哈希键，所以<strong>并没有</strong>一个比较好的方式来简单地删除某个特定url或文件路径对应的所有缓存文件。如果你只允许加载或缓存原始图片的话，问题可能会变得更简单，但因为Glide还会缓存缩略图和提供多种变换(<code>transformation</code>)，它们中的任何一个都会导致在缓存中创建一个新的文件，而要跟踪和删除一个图片的所有版本无疑是困难的。</p>
 <p>在实践中，使缓存文件无效的最佳方式是在内容发生变化时（url，uri，文件路径等）更改你的标识符。</p>
-<h4 id="Custom-Cache-Invalidation" class="article-heading"><a href="#Custom-Cache-Invalidation" class="headerlink" title="Custom Cache Invalidation"></a>Custom Cache Invalidation<a class="article-anchor" href="#Custom-Cache-Invalidation" aria-hidden="true"></a></h4><p>因为通常改变标识符比较困难或者根本不可能，所以Glide也提供了[<code>签名</code>][1]API来混合（你可以控制的）额外数据到你的缓存键中。签名(<code>signature</code>)适用于媒体内容，也适用于你可以自行维护的一些版本元数据。</p>
+<h4 id="定制缓存刷新策略" class="article-heading"><a href="#定制缓存刷新策略" class="headerlink" title="定制缓存刷新策略"></a>定制缓存刷新策略<a class="article-anchor" href="#定制缓存刷新策略" aria-hidden="true"></a></h4><p>因为通常改变标识符比较困难或者根本不可能，所以Glide也提供了[<code>签名</code>][1]API来混合（你可以控制的）额外数据到你的缓存键中。签名(<code>signature</code>)适用于媒体内容，也适用于你可以自行维护的一些版本元数据。</p>
 <ul>
 <li>MediaStore 内容 - 对于媒体存储内容，你可以使用Glide的[<code>MediaStoreSignature</code>][3]类作为你的签名。<code>MediaStoreSignature</code> 允许你混入修改时间、MIME类型，以及item的方向到缓存键中。这三个属性能够可靠地捕获对图片的编辑和更新，这可以允许你缓存媒体存储的缩略图。</li>
 <li>文件 - 你可以使用[<code>ObjectKey</code>][4]来混入文件的修改日期。</li>
@@ -125,7 +125,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:16:51.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:56:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -133,7 +133,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Glide里的缓存"><span class="toc-text">Glide里的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存键-Cache-Keys"><span class="toc-text">缓存键(Cache Keys)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置缓存"><span class="toc-text">配置缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘缓存策略（Disk-Cache-Strategy）"><span class="toc-text">磁盘缓存策略（Disk Cache Strategy）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仅从缓存加载图片"><span class="toc-text">仅从缓存加载图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跳过缓存"><span class="toc-text">跳过缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation"><span class="toc-text">Implementation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache-Invalidation"><span class="toc-text">Cache Invalidation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Custom-Cache-Invalidation"><span class="toc-text">Custom Cache Invalidation</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Glide里的缓存"><span class="toc-text">Glide里的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存键-Cache-Keys"><span class="toc-text">缓存键(Cache Keys)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置缓存"><span class="toc-text">配置缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘缓存策略（Disk-Cache-Strategy）"><span class="toc-text">磁盘缓存策略（Disk Cache Strategy）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仅从缓存加载图片"><span class="toc-text">仅从缓存加载图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跳过缓存"><span class="toc-text">跳过缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存的刷新"><span class="toc-text">缓存的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定制缓存刷新策略"><span class="toc-text">定制缓存刷新策略</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

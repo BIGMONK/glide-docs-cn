@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="原文链接：点击查看 Basic Usage很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，">
+  <!-- <meta name="description" content="原文链接：点击查看 基本用法很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，当你通过 [G">
 <meta property="og:type" content="website">
 <meta property="og:title" content="开始使用">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/getting-started.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="原文链接：点击查看 Basic Usage很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，">
+<meta property="og:description" content="原文链接：点击查看 基本用法很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，当你通过 [G">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:45:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始使用">
-<meta name="twitter:description" content="原文链接：点击查看 Basic Usage很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，"> -->
+<meta name="twitter:description" content="原文链接：点击查看 基本用法很多情况下，使用Glide加载图片非常简单，简单到只用一行代码： Glide.with(fragment)    .load(myUrl)    .into(imageView); 取消加载同样很简单： Glide.with(fragment).clear(imageView); 尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，当你通过 [G"> -->
 </head>
 
 <body>
@@ -65,17 +65,17 @@
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>原文链接：<a href="http://bumptech.github.io/glide/doc/getting-started.html" target="_blank" rel="external">点击查看</a></p>
-<h3 id="Basic-Usage" class="article-heading"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage<a class="article-anchor" href="#Basic-Usage" aria-hidden="true"></a></h3><p>很多情况下，使用Glide加载图片非常简单，简单到只用一行代码：</p>
+<h3 id="基本用法" class="article-heading"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法<a class="article-anchor" href="#基本用法" aria-hidden="true"></a></h3><p>很多情况下，使用Glide加载图片非常简单，简单到只用一行代码：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment)</div><div class="line">    .load(myUrl)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
 <p>取消加载同样很简单：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).clear(imageView);</div></pre></td></tr></table></figure>
 <p>尽管及时取消不必要的加载是很好的实践，但是你并不需要做这样的辛苦活。实际上，当你通过 [<code>Glide.with()</code>][1] 方法传入Glide的Activity或Fragment被销毁的时候，Glide会自动取消加载并回收资源。</p>
-<h3 id="Applications" class="article-heading"><a href="#Applications" class="headerlink" title="Applications"></a>Applications<a class="article-anchor" href="#Applications" aria-hidden="true"></a></h3><p>应用可以添加一个合适的被标记为 [<code>AppGlideModule</code>][6] 的实现类来生成一个内联了大部分选项的API，包括那些已经在集成库中定义过的：</p>
+<h3 id="应用程序" class="article-heading"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序<a class="article-anchor" href="#应用程序" aria-hidden="true"></a></h3><p>应用可以添加一个合适的被标记为 [<code>AppGlideModule</code>][6] 的实现类来生成一个内联了大部分选项的API，包括那些已经在集成库中定义过的：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.example.myapp;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.bumptech.glide.annotation.GlideModule;</div><div class="line"><span class="keyword">import</span> com.bumptech.glide.<span class="keyword">module</span>.AppGlideModule;</div><div class="line"></div><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;&#125;</div></pre></td></tr></table></figure>
 <p>API会在[<code>AppGlideModule</code>][6]的相同包下被生成出来，默认命名为<code>GlideApp</code>。将开始加载的代码从 <code>Glide.with()</code>改成<code>GlideApp.with()</code>，应用就可以使用新的API啦。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">   .load(myUrl)</div><div class="line">   .placeholder(placeholder)</div><div class="line">   .fitCenter()</div><div class="line">   .into(imageView);</div></pre></td></tr></table></figure>
 <p>可以访问Glide的 [generated API][7] 页面来获得更多信息。 </p>
-<h3 id="ListView-and-RecyclerView" class="article-heading"><a href="#ListView-and-RecyclerView" class="headerlink" title="ListView and RecyclerView"></a>ListView and RecyclerView<a class="article-anchor" href="#ListView-and-RecyclerView" aria-hidden="true"></a></h3><p>在ListView或RecyclerView中加载图片的代码和在单独的View中完全一样。Glide已经自动处理了View的重用和请求的取消操作：</p>
+<h3 id="ListView-和-RecyclerView" class="article-heading"><a href="#ListView-和-RecyclerView" class="headerlink" title="ListView 和 RecyclerView"></a>ListView 和 RecyclerView<a class="article-anchor" href="#ListView-和-RecyclerView" aria-hidden="true"></a></h3><p>在ListView或RecyclerView中加载图片的代码和在单独的View中完全一样。Glide已经自动处理了View的重用和请求的取消操作：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">    String url = urls.get(position);</div><div class="line">    Glide.with(fragment)</div><div class="line">        .load(url)</div><div class="line">        .into(holder.imageView);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>你也大可不必对你的url做null检查，如果url为空，Glide会擦除View的内容，或者显示你之前设置的任何 [placeholder Drawable][2] 或 [fallback Drawable][3] 。</p>
 <p>Glide唯一的要求就是，对于任何可复用的<code>View</code> [<code>Target</code>][5], 如果你在之前的位置可能启动了一个加载请求的话，对于新的位置，要么开始一个新的加载过程，要么使用 [<code>clear()</code>][4] API来显式地清空内容。</p>
@@ -86,7 +86,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:45:47.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -94,7 +94,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Usage"><span class="toc-text">Basic Usage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications"><span class="toc-text">Applications</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ListView-and-RecyclerView"><span class="toc-text">ListView and RecyclerView</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ListView-和-RecyclerView"><span class="toc-text">ListView 和 RecyclerView</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

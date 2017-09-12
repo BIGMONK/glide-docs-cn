@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="原文链接：点击查看 RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bi">
+  <!-- <meta name="description" content="原文链接：点击查看 请求选项Glide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等">
 <meta property="og:type" content="website">
 <meta property="og:title" content="选项">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/options.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="原文链接：点击查看 RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bi">
+<meta property="og:description" content="原文链接：点击查看 请求选项Glide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:53:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="选项">
-<meta name="twitter:description" content="原文链接：点击查看 RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bi"> -->
+<meta name="twitter:description" content="原文链接：点击查看 请求选项Glide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等"> -->
 </head>
 
 <body>
@@ -65,7 +65,7 @@
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>原文链接：<a href="http://bumptech.github.io/glide/doc/options.html" target="_blank" rel="external">点击查看</a></p>
-<h3 id="RequestOptions" class="article-heading"><a href="#RequestOptions" class="headerlink" title="RequestOptions"></a>RequestOptions<a class="article-anchor" href="#RequestOptions" aria-hidden="true"></a></h3><p>Glide中的大部分设置项都可以通过[<code>RequestOptions</code>][1]类和[<code>apply()</code>][2]方法来应用到程序中。</p>
+<h3 id="请求选项" class="article-heading"><a href="#请求选项" class="headerlink" title="请求选项"></a>请求选项<a class="article-anchor" href="#请求选项" aria-hidden="true"></a></h3><p>Glide中的大部分设置项都可以通过[<code>RequestOptions</code>][1]类和[<code>apply()</code>][2]方法来应用到程序中。</p>
 <p>使用<code>request options</code>可以实现（包括但不限于）：</p>
 <ul>
 <li>占位符(<code>Placeholders</code>)</li>
@@ -79,7 +79,7 @@
 <p>如果你想让你的应用的不同部分之间共享相同的加载选项，你也可以初始化一个新的<code>RequestOptions</code>对象，并在每次加载时传入这个对象：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions cropOptions = <span class="keyword">new</span> RequestOptions().centerCrop(context);</div><div class="line">...</div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(cropOptions)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
 <p>[<code>apply()</code>][2] 方法可以被调用多次，因此<code>RequestOption</code>可以被组合使用。如果<code>RequestOptions</code>对象之间存在相互冲突的设置，那么只有最后一个被应用的 <code>RequestOptions</code>会生效。</p>
-<h3 id="TransitionOptions" class="article-heading"><a href="#TransitionOptions" class="headerlink" title="TransitionOptions"></a>TransitionOptions<a class="article-anchor" href="#TransitionOptions" aria-hidden="true"></a></h3><p>[TransitionOptions][5]用于决定你的加载完成时会发生什么。</p>
+<h3 id="过渡选项" class="article-heading"><a href="#过渡选项" class="headerlink" title="过渡选项"></a>过渡选项<a class="article-anchor" href="#过渡选项" aria-hidden="true"></a></h3><p>[TransitionOptions][5]用于决定你的加载完成时会发生什么。</p>
 <p>使用<code>TransitionOption</code>可以应用以下变换：</p>
 <ul>
 <li>View淡入</li>
@@ -103,12 +103,12 @@
 </ul>
 <p>你可以通过调用<code>Glide.with()</code>来构造一个<code>RequestBuilder</code>对象：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder = Glide.with(fragment);</div></pre></td></tr></table></figure>
-<h4 id="Picking-a-resource-type" class="article-heading"><a href="#Picking-a-resource-type" class="headerlink" title="Picking a resource type"></a>Picking a resource type<a class="article-anchor" href="#Picking-a-resource-type" aria-hidden="true"></a></h4><p><code>RequestBuilders</code>是特定于它们将要加载的资源类型的。默认情况下你会得到一个Drawable RequestBuilder，但你可以使用<code>as...</code>系列方法来改变请求类型。例如，如果你调用了<code>asBitmap()</code>，你就将获得一个``Bitmap<figure class="highlight plain"><figcaption><span>RequestBuilder。</span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">```java</div><div class="line">RequestBuilder&lt;Bitmap&gt; requestBuilder = Glide.with(fragment).asBitmap();</div></pre></td></tr></table></figure></p>
-<h4 id="Applying-RequestOptions" class="article-heading"><a href="#Applying-RequestOptions" class="headerlink" title="Applying RequestOptions"></a>Applying RequestOptions<a class="article-anchor" href="#Applying-RequestOptions" aria-hidden="true"></a></h4><p>前面提到，可以使用[<code>apply()</code>][2] 方法应用<code>RequestOptions</code>，使用[<code>transition()</code>][10]方法应用<code>TransitionOptions</code>。</p>
+<h4 id="选择资源类型" class="article-heading"><a href="#选择资源类型" class="headerlink" title="选择资源类型"></a>选择资源类型<a class="article-anchor" href="#选择资源类型" aria-hidden="true"></a></h4><p><code>RequestBuilders</code>是特定于它们将要加载的资源类型的。默认情况下你会得到一个Drawable RequestBuilder，但你可以使用<code>as...</code>系列方法来改变请求类型。例如，如果你调用了<code>asBitmap()</code>，你就将获得一个``Bitmap<figure class="highlight plain"><figcaption><span>RequestBuilder。</span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">```java</div><div class="line">RequestBuilder&lt;Bitmap&gt; requestBuilder = Glide.with(fragment).asBitmap();</div></pre></td></tr></table></figure></p>
+<h4 id="应用-RequestOptions" class="article-heading"><a href="#应用-RequestOptions" class="headerlink" title="应用 RequestOptions"></a>应用 RequestOptions<a class="article-anchor" href="#应用-RequestOptions" aria-hidden="true"></a></h4><p>前面提到，可以使用[<code>apply()</code>][2] 方法应用<code>RequestOptions</code>，使用[<code>transition()</code>][10]方法应用<code>TransitionOptions</code>。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder = Glide.with(fragment);</div><div class="line">requestBuilder.apply(requestOptions);</div><div class="line">requestBuilder.transition(transitionOptions);</div></pre></td></tr></table></figure>
 <p>RequestBuilder也可以被复用于开始多个请求：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder =</div><div class="line">        Glide.with(fragment)</div><div class="line">            .asDrawable()</div><div class="line">            .apply(requestOptions);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numViews; i++) &#123;</div><div class="line">   ImageView view = viewGroup.getChildAt(i);</div><div class="line">   String url = urls.get(i);</div><div class="line">   requestBuilder.load(url).into(view);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Component-Options" class="article-heading"><a href="#Component-Options" class="headerlink" title="Component Options"></a>Component Options<a class="article-anchor" href="#Component-Options" aria-hidden="true"></a></h3><p>[<code>Option</code>][11]类是给Glide的组件添加参数的通用办法，包括[<code>ModelLoaders</code>][12], [<code>ResourceDecoders</code>][13], [<code>ResourceEncoders</code>][14], [<code>Encoders</code>][15]等等。一些Glide的内置组件提供了设置项，自定义的组件也可以添加设置项。</p>
+<h3 id="组件选项" class="article-heading"><a href="#组件选项" class="headerlink" title="组件选项"></a>组件选项<a class="article-anchor" href="#组件选项" aria-hidden="true"></a></h3><p>[<code>Option</code>][11]类是给Glide的组件添加参数的通用办法，包括[<code>ModelLoaders</code>][12], [<code>ResourceDecoders</code>][13], [<code>ResourceEncoders</code>][14], [<code>Encoders</code>][15]等等。一些Glide的内置组件提供了设置项，自定义的组件也可以添加设置项。</p>
 <p><code>Option</code>通过<code>RequestOptions</code>类应用到请求上：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.bumptech.glide.request.RequestOptions.option;</div><div class="line"></div><div class="line">Glide.with(context)</div><div class="line">  .load(url)</div><div class="line">  .apply(option(MyCustomModelLoader.TIMEOUT_MS, <span class="number">1000L</span>))</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
 <p>你也可以创建一个全新的RequestOptions对象：</p>
@@ -119,7 +119,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:53:55.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -127,7 +127,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestOptions"><span class="toc-text">RequestOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TransitionOptions"><span class="toc-text">TransitionOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestBuilder"><span class="toc-text">RequestBuilder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Picking-a-resource-type"><span class="toc-text">Picking a resource type</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Applying-RequestOptions"><span class="toc-text">Applying RequestOptions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Component-Options"><span class="toc-text">Component Options</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#请求选项"><span class="toc-text">请求选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过渡选项"><span class="toc-text">过渡选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestBuilder"><span class="toc-text">RequestBuilder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#选择资源类型"><span class="toc-text">选择资源类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用-RequestOptions"><span class="toc-text">应用 RequestOptions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件选项"><span class="toc-text">组件选项</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

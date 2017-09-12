@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="原文链接：点击查看 TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置e">
+  <!-- <meta name="description" content="原文链接：点击查看 类型Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  占位符(Placeholder)占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设">
 <meta property="og:type" content="website">
 <meta property="og:title" content="占位符">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/placeholders.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="原文链接：点击查看 TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置e">
+<meta property="og:description" content="原文链接：点击查看 类型Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  占位符(Placeholder)占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:53:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="占位符">
-<meta name="twitter:description" content="原文链接：点击查看 TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置e"> -->
+<meta name="twitter:description" content="原文链接：点击查看 类型Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  占位符(Placeholder)占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设"> -->
 </head>
 
 <body>
@@ -65,35 +65,35 @@
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>原文链接：<a href="http://bumptech.github.io/glide/doc/placeholders.html" target="_blank" rel="external">点击查看</a></p>
-<h3 id="Types" class="article-heading"><a href="#Types" class="headerlink" title="Types"></a>Types<a class="article-anchor" href="#Types" aria-hidden="true"></a></h3><p>Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：</p>
+<h3 id="类型" class="article-heading"><a href="#类型" class="headerlink" title="类型"></a>类型<a class="article-anchor" href="#类型" aria-hidden="true"></a></h3><p>Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：</p>
 <ul>
 <li>[placeholder][1]</li>
 <li>[error][2]</li>
 <li>[fallback][3]</li>
 </ul>
-<h4 id="Placeholder" class="article-heading"><a href="#Placeholder" class="headerlink" title="Placeholder"></a>Placeholder<a class="article-anchor" href="#Placeholder" aria-hidden="true"></a></h4><p>占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置<code>error Drawable</code>，则占位符将被持续展示。类似地，如果请求的url/model为<code>null</code>，并且<code>error Drawable</code>和<code>fallback</code>都没有设置，那么占位符也会继续显示。</p>
+<h4 id="占位符-Placeholder" class="article-heading"><a href="#占位符-Placeholder" class="headerlink" title="占位符(Placeholder)"></a>占位符(Placeholder)<a class="article-anchor" href="#占位符-Placeholder" aria-hidden="true"></a></h4><p>占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置<code>error Drawable</code>，则占位符将被持续展示。类似地，如果请求的url/model为<code>null</code>，并且<code>error Drawable</code>和<code>fallback</code>都没有设置，那么占位符也会继续显示。</p>
 <p>使用<a href="generatedapi.html">generated API</a>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .placeholder(R.drawable.placeholder)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
 <p>Or:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .placeholder(<span class="keyword">new</span> ColorDrawable(Color.BLACK))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
-<h4 id="Error" class="article-heading"><a href="#Error" class="headerlink" title="Error"></a>Error<a class="article-anchor" href="#Error" aria-hidden="true"></a></h4><p><code>error Drawable</code>在请求永久性失败时展示。<code>error Drawable</code>同样也在请求的url/model为<code>null</code>，且并没有设置<code>fallback Drawable</code>时展示。</p>
+<h4 id="错误符-Error" class="article-heading"><a href="#错误符-Error" class="headerlink" title="错误符(Error)"></a>错误符(Error)<a class="article-anchor" href="#错误符-Error" aria-hidden="true"></a></h4><p><code>error Drawable</code>在请求永久性失败时展示。<code>error Drawable</code>同样也在请求的url/model为<code>null</code>，且并没有设置<code>fallback Drawable</code>时展示。</p>
 <p>With the <a href="generatedapi.html">generated API</a>:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .error(R.drawable.error)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
 <p>Or:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .error(<span class="keyword">new</span> ColorDrawable(Color.RED))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
-<h4 id="Fallback" class="article-heading"><a href="#Fallback" class="headerlink" title="Fallback"></a>Fallback<a class="article-anchor" href="#Fallback" aria-hidden="true"></a></h4><p><code>fallback Drawable</code>在请求的url/model为<code>null</code>时展示。设计<code>fallback Drawable</code>的主要目的是允许用户指示<code>null</code>是否为可接受的正常情况。例如，一个<code>null</code>的个人资料url可能暗示这个用户没有设置头像，因此应该使用默认头像。然而，<code>null</code>也可能表明这个元数据根本就是不合法的，或者取不到。<br>默认情况下Glide将<code>null</code>作为错误处理，所以可以接受<code>null</code>的应用应当显式地设置一个<code>fallback Drawable</code>。</p>
+<h4 id="后备回调符-Fallback" class="article-heading"><a href="#后备回调符-Fallback" class="headerlink" title="后备回调符(Fallback)"></a>后备回调符(Fallback)<a class="article-anchor" href="#后备回调符-Fallback" aria-hidden="true"></a></h4><p><code>fallback Drawable</code>在请求的url/model为<code>null</code>时展示。设计<code>fallback Drawable</code>的主要目的是允许用户指示<code>null</code>是否为可接受的正常情况。例如，一个<code>null</code>的个人资料url可能暗示这个用户没有设置头像，因此应该使用默认头像。然而，<code>null</code>也可能表明这个元数据根本就是不合法的，或者取不到。<br>默认情况下Glide将<code>null</code>作为错误处理，所以可以接受<code>null</code>的应用应当显式地设置一个<code>fallback Drawable</code>。</p>
 <p>使用<a href="generatedapi.html">generated API</a>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .fallback(R.drawable.fallback)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
 <p>Or:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .fallback(<span class="keyword">new</span> ColorDrawable(Color.GREY))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
 <h3 id="FAQ" class="article-heading"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ<a class="article-anchor" href="#FAQ" aria-hidden="true"></a></h3><h5 id="占位符是异步加载的吗？" class="article-heading"><a href="#占位符是异步加载的吗？" class="headerlink" title="占位符是异步加载的吗？"></a>占位符是异步加载的吗？<a class="article-anchor" href="#占位符是异步加载的吗？" aria-hidden="true"></a></h5><p>No。占位符是在主线程从Android Resources加载的。我们通常希望占位符比较小且容易被系统资源缓存机制缓存起来。</p>
-<h5 id="transfomation是否会被应用到占位符上？" class="article-heading"><a href="#transfomation是否会被应用到占位符上？" class="headerlink" title="transfomation是否会被应用到占位符上？"></a>transfomation是否会被应用到占位符上？<a class="article-anchor" href="#transfomation是否会被应用到占位符上？" aria-hidden="true"></a></h5><p>No。Transformation仅被应用于被请求的资源，而不会对任何占位符使用。例如你正在加载圆形图片，你可能希望在你的应用中包含圆形的占位符。但是你也可以考虑自定义一个View来剪裁(clip)你的占位符，达到你的transformation的效果。</p>
+<h5 id="变换是否会被应用到占位符上？" class="article-heading"><a href="#变换是否会被应用到占位符上？" class="headerlink" title="变换是否会被应用到占位符上？"></a>变换是否会被应用到占位符上？<a class="article-anchor" href="#变换是否会被应用到占位符上？" aria-hidden="true"></a></h5><p>No。Transformation仅被应用于被请求的资源，而不会对任何占位符使用。例如你正在加载圆形图片，你可能希望在你的应用中包含圆形的占位符。但是你也可以考虑自定义一个View来剪裁(clip)你的占位符，达到你的transformation的效果。</p>
 <h5 id="在多个不同的View上使用相同的Drawable可行么？" class="article-heading"><a href="#在多个不同的View上使用相同的Drawable可行么？" class="headerlink" title="在多个不同的View上使用相同的Drawable可行么？"></a>在多个不同的View上使用相同的Drawable可行么？<a class="article-anchor" href="#在多个不同的View上使用相同的Drawable可行么？" aria-hidden="true"></a></h5><p>通常可以，但不是绝对的。任何无状态(<code>non-stateful</code>)的Drawable（例如<code>BitmapDrawable</code>）通常都是ok的。但是有状态的Drawable不一样，在同一时间多个View上展示它们通常不是很安全，因为多个View会立刻修改(<code>mutate</code>)Drawable。对于有状态的Drawable，建议传入一个资源ID，或者使用<code>newDrawable()</code>来给每个请求传入一个新的拷贝。</p>
 <p>[1]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#placeholder-int-<br>[2]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#error-int-<br>[3]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#fallback-int-</p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:53:21.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -101,7 +101,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Types"><span class="toc-text">Types</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Placeholder"><span class="toc-text">Placeholder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Error"><span class="toc-text">Error</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fallback"><span class="toc-text">Fallback</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#占位符是异步加载的吗？"><span class="toc-text">占位符是异步加载的吗？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#transfomation是否会被应用到占位符上？"><span class="toc-text">transfomation是否会被应用到占位符上？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在多个不同的View上使用相同的Drawable可行么？"><span class="toc-text">在多个不同的View上使用相同的Drawable可行么？</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型"><span class="toc-text">类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#占位符-Placeholder"><span class="toc-text">占位符(Placeholder)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误符-Error"><span class="toc-text">错误符(Error)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后备回调符-Fallback"><span class="toc-text">后备回调符(Fallback)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#占位符是异步加载的吗？"><span class="toc-text">占位符是异步加载的吗？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#变换是否会被应用到占位符上？"><span class="toc-text">变换是否会被应用到占位符上？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在多个不同的View上使用相同的Drawable可行么？"><span class="toc-text">在多个不同的View上使用相同的Drawable可行么？</span></a></li></ol></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

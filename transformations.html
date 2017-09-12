@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="原文链接：点击查看 About在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 Built in typesGlide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  A">
+  <!-- <meta name="description" content="原文链接：点击查看 关于变换在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 内置类型Glide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  应用通过[Request">
 <meta property="og:type" content="website">
 <meta property="og:title" content="变换">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/transformations.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="原文链接：点击查看 About在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 Built in typesGlide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  A">
+<meta property="og:description" content="原文链接：点击查看 关于变换在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 内置类型Glide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  应用通过[Request">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:51:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变换">
-<meta name="twitter:description" content="原文链接：点击查看 About在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 Built in typesGlide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  A"> -->
+<meta name="twitter:description" content="原文链接：点击查看 关于变换在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。 内置类型Glide提供了很多内置的变换，包括：  [CenterCrop][4] [FitCenter][2] [CircleCrop][6]  应用通过[Request"> -->
 </head>
 
 <body>
@@ -65,29 +65,29 @@
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>原文链接：<a href="http://bumptech.github.io/glide/doc/transformations.html" target="_blank" rel="external">点击查看</a></p>
-<h3 id="About" class="article-heading"><a href="#About" class="headerlink" title="About"></a>About<a class="article-anchor" href="#About" aria-hidden="true"></a></h3><p>在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。</p>
-<h3 id="Built-in-types" class="article-heading"><a href="#Built-in-types" class="headerlink" title="Built in types"></a>Built in types<a class="article-anchor" href="#Built-in-types" aria-hidden="true"></a></h3><p>Glide提供了很多内置的变换，包括：</p>
+<h3 id="关于变换" class="article-heading"><a href="#关于变换" class="headerlink" title="关于变换"></a>关于变换<a class="article-anchor" href="#关于变换" aria-hidden="true"></a></h3><p>在Glide中，[Transformations][1]可以获取资源并修改它，然后返回被修改后的资源。通常变换操作是用来完成剪裁或对位图应用过滤器，但它也可以用于转换GIF动画，甚至自定义的资源类型。</p>
+<h3 id="内置类型" class="article-heading"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型<a class="article-anchor" href="#内置类型" aria-hidden="true"></a></h3><p>Glide提供了很多内置的变换，包括：</p>
 <ul>
 <li>[CenterCrop][4]</li>
 <li>[FitCenter][2]</li>
 <li>[CircleCrop][6]</li>
 </ul>
-<h3 id="Applying-Transformations" class="article-heading"><a href="#Applying-Transformations" class="headerlink" title="Applying Transformations"></a>Applying Transformations<a class="article-anchor" href="#Applying-Transformations" aria-hidden="true"></a></h3><p>通过[RequestOptions][9]类可以应用变换：</p>
-<h4 id="Default-Transformations" class="article-heading"><a href="#Default-Transformations" class="headerlink" title="Default Transformations"></a>Default Transformations<a class="article-anchor" href="#Default-Transformations" aria-hidden="true"></a></h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions options = <span class="keyword">new</span> RequestOptions();</div><div class="line">options.centerCrop();</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(options)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<h3 id="应用" class="article-heading"><a href="#应用" class="headerlink" title="应用"></a>应用<a class="article-anchor" href="#应用" aria-hidden="true"></a></h3><p>通过[RequestOptions][9]类可以应用变换：</p>
+<h4 id="默认变换" class="article-heading"><a href="#默认变换" class="headerlink" title="默认变换"></a>默认变换<a class="article-anchor" href="#默认变换" aria-hidden="true"></a></h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions options = <span class="keyword">new</span> RequestOptions();</div><div class="line">options.centerCrop();</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(options)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
 <p>大多数内置的变换都有静态的import，这是为API的流畅性考虑的。例如，你可以通过静态方法应用一个[FitCenter][2]变换：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.bumptech.glide.request.RequestOptions.fitCenterTransform;</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(fitCenterTransform())</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
 <p>如果你正在使用[生成的API][16]，那么这些变换方法已经被内联了，所以使用起来甚至更为轻松：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .fitCenter()</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
 <p>可以查阅<a href="options.html">Options</a>页来获得更多<code>RequestOption</code>的相关信息。</p>
-<h4 id="Multiple-Transformations" class="article-heading"><a href="#Multiple-Transformations" class="headerlink" title="Multiple Transformations."></a>Multiple Transformations.<a class="article-anchor" href="#Multiple-Transformations" aria-hidden="true"></a></h4><p>默认情况下，每个[<code>transform()</code>][17]调用，或任何特定转换方法(<code>fitCenter()</code>, <code>centerCrop()</code>, <code>bitmapTransform()</code> etc)的调用都会替换掉之前的变换。</p>
+<h4 id="多重变换" class="article-heading"><a href="#多重变换" class="headerlink" title="多重变换"></a>多重变换<a class="article-anchor" href="#多重变换" aria-hidden="true"></a></h4><p>默认情况下，每个[<code>transform()</code>][17]调用，或任何特定转换方法(<code>fitCenter()</code>, <code>centerCrop()</code>, <code>bitmapTransform()</code> etc)的调用都会替换掉之前的变换。</p>
 <p>如果你想在单次加载中应用多个变换，请使用[<code>MultiTransformation</code>][18]类。</p>
 <p>使用[generated API][16]:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .transform(<span class="keyword">new</span> MultiTransformation(<span class="keyword">new</span> FitCenter(), <span class="keyword">new</span> YourCustomTransformation())</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
 <p>请注意，你向 [<code>MultiTransformation</code>][18]的构造器传入变换参数的顺序，决定了这些变换的应用顺序。</p>
-<h3 id="Special-Behavior-in-Glide" class="article-heading"><a href="#Special-Behavior-in-Glide" class="headerlink" title="Special Behavior in Glide"></a>Special Behavior in Glide<a class="article-anchor" href="#Special-Behavior-in-Glide" aria-hidden="true"></a></h3><h4 id="Re-using-Transformations" class="article-heading"><a href="#Re-using-Transformations" class="headerlink" title="Re-using Transformations"></a>Re-using Transformations<a class="article-anchor" href="#Re-using-Transformations" aria-hidden="true"></a></h4><p><code>Transformation</code>的设计初衷是无状态的。因此，在多个加载中复用<code>Transformation</code>应当总是安全的。创建一次<code>Transformation</code>并在多个加载中使用它，通常是很好的实践。</p>
-<h4 id="Automatic-Transformations-for-ImageViews" class="article-heading"><a href="#Automatic-Transformations-for-ImageViews" class="headerlink" title="Automatic Transformations for ImageViews"></a>Automatic Transformations for ImageViews<a class="article-anchor" href="#Automatic-Transformations-for-ImageViews" aria-hidden="true"></a></h4><p>在Glide中，当你为一个<a href="http://developer.android.com/reference/android/widget/ImageView.html" target="_blank" rel="external">ImageView</a>开始加载时，Glide可能会自动应用[FitCenter][2]或[CenterCrop][4]，这取决于view的<a href="http://developer.android.com/reference/android/widget/ImageView.ScaleType.html" target="_blank" rel="external">ScaleType</a>。如果<code>scaleType</code>是<code>CENTER_CROP</code>, Glide将会自动应用<code>CenterCrop</code>变换。如果<code>scaleType</code>为<code>FIT_CENTER</code> 或 <code>CENTER_INSIDE</code>，Glide会自动使用 <code>FitCenter</code>变换。</p>
+<h3 id="Glide中的特殊行为" class="article-heading"><a href="#Glide中的特殊行为" class="headerlink" title="Glide中的特殊行为"></a>Glide中的特殊行为<a class="article-anchor" href="#Glide中的特殊行为" aria-hidden="true"></a></h3><h4 id="重用变换" class="article-heading"><a href="#重用变换" class="headerlink" title="重用变换"></a>重用变换<a class="article-anchor" href="#重用变换" aria-hidden="true"></a></h4><p><code>Transformation</code>的设计初衷是无状态的。因此，在多个加载中复用<code>Transformation</code>应当总是安全的。创建一次<code>Transformation</code>并在多个加载中使用它，通常是很好的实践。</p>
+<h4 id="ImageView的自动变换" class="article-heading"><a href="#ImageView的自动变换" class="headerlink" title="ImageView的自动变换"></a>ImageView的自动变换<a class="article-anchor" href="#ImageView的自动变换" aria-hidden="true"></a></h4><p>在Glide中，当你为一个<a href="http://developer.android.com/reference/android/widget/ImageView.html" target="_blank" rel="external">ImageView</a>开始加载时，Glide可能会自动应用[FitCenter][2]或[CenterCrop][4]，这取决于view的<a href="http://developer.android.com/reference/android/widget/ImageView.ScaleType.html" target="_blank" rel="external">ScaleType</a>。如果<code>scaleType</code>是<code>CENTER_CROP</code>, Glide将会自动应用<code>CenterCrop</code>变换。如果<code>scaleType</code>为<code>FIT_CENTER</code> 或 <code>CENTER_INSIDE</code>，Glide会自动使用 <code>FitCenter</code>变换。</p>
 <p>当然，你总有权利覆写默认的变换，只需要一个带有<code>Transformation</code>集合的[RequestOptions][9] 即可。另外，你也可以通过使用[<code>dontTransform()</code>][10]确保不会自动应用任何变换。</p>
-<h4 id="Custom-resources" class="article-heading"><a href="#Custom-resources" class="headerlink" title="Custom resources"></a>Custom resources<a class="article-anchor" href="#Custom-resources" aria-hidden="true"></a></h4><p>因为Glide 4.0 允许你指定你将解码的资源的父类型，你可能无法确切地知道将会应用何种变换。例如，当你使用[<code>asDrawable()</code>]<a href="或就是普通的``with(">11</a><code>，因为</code>asDrawable()<code>是默认情形)来加载Drawable资源时，你可能会得到[</code>BitmapDrawable<code>][12]子类，也有可能得到[</code>GifDrawable``][13] 子类。</p>
+<h4 id="自定义资源" class="article-heading"><a href="#自定义资源" class="headerlink" title="自定义资源"></a>自定义资源<a class="article-anchor" href="#自定义资源" aria-hidden="true"></a></h4><p>因为Glide 4.0 允许你指定你将解码的资源的父类型，你可能无法确切地知道将会应用何种变换。例如，当你使用[<code>asDrawable()</code>]<a href="或就是普通的``with(">11</a><code>，因为</code>asDrawable()<code>是默认情形)来加载Drawable资源时，你可能会得到[</code>BitmapDrawable<code>][12]子类，也有可能得到[</code>GifDrawable``][13] 子类。</p>
 <p>为了确保你添加到<code>RequestOptions</code>中的任何变换都会被使用，Glide将<code>Transformation</code>添加到一个Map中保存，其Key为你提供变换的资源类型。当资源被成功解码时，Glide使用这个Map来取回对应的<code>Transformation</code>。</p>
 <p>Glide可以将<code>Bitmap</code> <code>Transformation</code>应用到<code>BitmapDrawable</code>, <code>GifDrawable</code>, 以及<code>Bitmap</code>资源上，因此通常你只需要编写和应用<code>Bitmap</code> <code>Transformation</code>。然而，如果你添加了额外的资源类型，你可能需要考虑派生[<code>RequestOptions</code>][15]类，并让你的资源类型能应用Glide内置的<code>Bitmap</code> <code>Transformation</code>。</p>
 <p>[1]: /glide/javadocs/400/com/bumptech/glide/load/Transformation.html<br>[2]: /glide/javadocs/400/com/bumptech/glide/load/resource/bitmap/FitCenter.html</p>
@@ -97,7 +97,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:51:31.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -105,7 +105,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#About"><span class="toc-text">About</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Built-in-types"><span class="toc-text">Built in types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Applying-Transformations"><span class="toc-text">Applying Transformations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Default-Transformations"><span class="toc-text">Default Transformations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multiple-Transformations"><span class="toc-text">Multiple Transformations.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-Behavior-in-Glide"><span class="toc-text">Special Behavior in Glide</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Re-using-Transformations"><span class="toc-text">Re-using Transformations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Automatic-Transformations-for-ImageViews"><span class="toc-text">Automatic Transformations for ImageViews</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Custom-resources"><span class="toc-text">Custom resources</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于变换"><span class="toc-text">关于变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置类型"><span class="toc-text">内置类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认变换"><span class="toc-text">默认变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多重变换"><span class="toc-text">多重变换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Glide中的特殊行为"><span class="toc-text">Glide中的特殊行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重用变换"><span class="toc-text">重用变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ImageView的自动变换"><span class="toc-text">ImageView的自动变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义资源"><span class="toc-text">自定义资源</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

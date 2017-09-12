@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="原文链接：点击查看 About在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 Default behavior在Glide中，图像可能从">
+  <!-- <meta name="description" content="原文链接：点击查看 关于过渡在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 默认行为在Glide中，图像可能从四个地方中的任何一个位置加">
 <meta property="og:type" content="website">
 <meta property="og:title" content="过渡">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/transitions.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="原文链接：点击查看 About在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 Default behavior在Glide中，图像可能从">
+<meta property="og:description" content="原文链接：点击查看 关于过渡在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 默认行为在Glide中，图像可能从四个地方中的任何一个位置加">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:51:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="过渡">
-<meta name="twitter:description" content="原文链接：点击查看 About在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 Default behavior在Glide中，图像可能从"> -->
+<meta name="twitter:description" content="原文链接：点击查看 关于过渡在Glide中，[Transitions(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[Transitions][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。 默认行为在Glide中，图像可能从四个地方中的任何一个位置加"> -->
 </head>
 
 <body>
@@ -65,8 +65,8 @@
               </header>
               <div class="article-content" itemprop="articleBody">
                 <p>原文链接：<a href="http://bumptech.github.io/glide/doc/transitions.html" target="_blank" rel="external">点击查看</a></p>
-<h3 id="About" class="article-heading"><a href="#About" class="headerlink" title="About"></a>About<a class="article-anchor" href="#About" aria-hidden="true"></a></h3><p>在Glide中，[<code>Transitions</code>(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[<code>Transitions</code>][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。</p>
-<h3 id="Default-behavior" class="article-heading"><a href="#Default-behavior" class="headerlink" title="Default behavior"></a>Default behavior<a class="article-anchor" href="#Default-behavior" aria-hidden="true"></a></h3><p>在Glide中，图像可能从四个地方中的任何一个位置加载出来：</p>
+<h3 id="关于过渡" class="article-heading"><a href="#关于过渡" class="headerlink" title="关于过渡"></a>关于过渡<a class="article-anchor" href="#关于过渡" aria-hidden="true"></a></h3><p>在Glide中，[<code>Transitions</code>(直译为”过渡”)][1]允许你定义Glide如何从占位符到新加载的图片，或从缩略图到全尺寸图像过渡。Transition在单一请求的上下文中工作，而不会跨多个请求。因此，[<code>Transitions</code>][1]并不能让你定义从一个请求到另一个请求的动画（比如，交叉淡入效果）。</p>
+<h3 id="默认行为" class="article-heading"><a href="#默认行为" class="headerlink" title="默认行为"></a>默认行为<a class="article-anchor" href="#默认行为" aria-hidden="true"></a></h3><p>在Glide中，图像可能从四个地方中的任何一个位置加载出来：</p>
 <ol>
 <li>Glide的内存缓存</li>
 <li>Glide的磁盘缓存</li>
@@ -75,15 +75,15 @@
 </ol>
 <p>如果图像从Glide的内存缓存中加载出来，Glide的默认过渡将不会执行。然而，在另外三种场景下，Glide的默认过渡都会被执行。</p>
 <p>要改变这种默认的过渡行为，请查看接下来的[custom transitions][20]章节。</p>
-<h3 id="Specifying-Transitions" class="article-heading"><a href="#Specifying-Transitions" class="headerlink" title="Specifying Transitions"></a>Specifying Transitions<a class="article-anchor" href="#Specifying-Transitions" aria-hidden="true"></a></h3><p>你可以查看<a href="/glide/doc/options.html#transitionoptions">Options documentation</a>以获取概览和示例代码。</p>
+<h3 id="指定过渡" class="article-heading"><a href="#指定过渡" class="headerlink" title="指定过渡"></a>指定过渡<a class="article-anchor" href="#指定过渡" aria-hidden="true"></a></h3><p>你可以查看<a href="/glide/doc/options.html#transitionoptions">Options documentation</a>以获取概览和示例代码。</p>
 <p>[<code>TransitionOptions</code>][12]用于给一个特定的请求指定transition。 每个请求可以使用[<code>RequestBuilder</code>][14]中的[<code>transition()</code>][13]方法来设定[<code>TransitionOptions</code>][12]。还可以通过使用[<code>BitmapTransitionOptions</code>][15] 或 [<code>DrawableTransitionOptions</code>][16]来指定类型特定的过渡动画。对于Bitmap和Drawable之外的资源类型，可以使用[<code>GenericTransitionOptions</code>][17]。</p>
-<h3 id="Performance-Tips" class="article-heading"><a href="#Performance-Tips" class="headerlink" title="Performance Tips"></a>Performance Tips<a class="article-anchor" href="#Performance-Tips" aria-hidden="true"></a></h3><p>Android中的动画代价是比较大的，尤其是同时开始大量动画的时候。 交叉淡入和其他涉及alpha变化的动画显得尤其昂贵。 此外，动画通常比图片解码本身还要耗时。在列表和网格中滥用动画可能会让图像的加载显得缓慢而卡顿。为了提升性能，请在使用Glide向ListView, GridView, 或RecyclerView加载图片时考虑避免使用动画，尤其是大多数情况下，你希望图片被尽快缓存和加载的时候。作为替代方案，请考虑预加载，这样当用户滑动到具体的item的时候，图片已经在内存中了。</p>
-<h3 id="Common-Errors" class="article-heading"><a href="#Common-Errors" class="headerlink" title="Common Errors"></a>Common Errors<a class="article-anchor" href="#Common-Errors" aria-hidden="true"></a></h3><h4 id="Cross-fading-with-placeholders-and-transparent-images" class="article-heading"><a href="#Cross-fading-with-placeholders-and-transparent-images" class="headerlink" title="Cross fading with placeholders and transparent images"></a>Cross fading with placeholders and transparent images<a class="article-anchor" href="#Cross-fading-with-placeholders-and-transparent-images" aria-hidden="true"></a></h4><p>Glide 的默认交叉淡入效果使用了<a href="https://developer.android.com/reference/android/graphics/drawable/TransitionDrawable.html" target="_blank" rel="external"><code>TransitionDrawable</code></a>。它提供两种动画模式，由<a href="https://developer.android.com/reference/android/graphics/drawable/TransitionDrawable.html#setCrossFadeEnabled(boolean)" target="_blank" rel="external"><code>setCrossFadeEnabled()</code></a>控制。当交叉淡入被禁用时，正在过渡的图片会在原先显示的图像上面淡入。当交叉淡入被启用时，原先显示的图片会从不透明过渡到透明，而正在过渡的图片则会从透明变为不透明。</p>
+<h3 id="性能提示" class="article-heading"><a href="#性能提示" class="headerlink" title="性能提示"></a>性能提示<a class="article-anchor" href="#性能提示" aria-hidden="true"></a></h3><p>Android中的动画代价是比较大的，尤其是同时开始大量动画的时候。 交叉淡入和其他涉及alpha变化的动画显得尤其昂贵。 此外，动画通常比图片解码本身还要耗时。在列表和网格中滥用动画可能会让图像的加载显得缓慢而卡顿。为了提升性能，请在使用Glide向ListView, GridView, 或RecyclerView加载图片时考虑避免使用动画，尤其是大多数情况下，你希望图片被尽快缓存和加载的时候。作为替代方案，请考虑预加载，这样当用户滑动到具体的item的时候，图片已经在内存中了。</p>
+<h3 id="常见错误" class="article-heading"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误<a class="article-anchor" href="#常见错误" aria-hidden="true"></a></h3><h4 id="对占位符和透明图片交叉淡入" class="article-heading"><a href="#对占位符和透明图片交叉淡入" class="headerlink" title="对占位符和透明图片交叉淡入"></a>对占位符和透明图片交叉淡入<a class="article-anchor" href="#对占位符和透明图片交叉淡入" aria-hidden="true"></a></h4><p>Glide 的默认交叉淡入(cross fade)效果使用了<a href="https://developer.android.com/reference/android/graphics/drawable/TransitionDrawable.html" target="_blank" rel="external"><code>TransitionDrawable</code></a>。它提供两种动画模式，由<a href="https://developer.android.com/reference/android/graphics/drawable/TransitionDrawable.html#setCrossFadeEnabled(boolean)" target="_blank" rel="external"><code>setCrossFadeEnabled()</code></a>控制。当交叉淡入被禁用时，正在过渡的图片会在原先显示的图像上面淡入。当交叉淡入被启用时，原先显示的图片会从不透明过渡到透明，而正在过渡的图片则会从透明变为不透明。</p>
 <p>在Glide中，我们默认禁用了交叉淡入，这样通常看起来要好看一些。实际的交叉淡入，如上所述对两个图片同时改变alpha值，通常会在过渡的中间造成一个短暂的白色闪屏，这个时候两个图片都是部分不透明的。</p>
 <p>不幸的是，虽然禁用交叉淡入通常是一个比较好的默认行为，当待加载的图片包含透明像素时仍然可能造成问题。当占位符比实际加载的图片要大，或者图片部分为透明时，禁用交叉淡入会导致动画完成后占位符在图片后面仍然可见。 如果你在加载透明图片时使用了占位符，你可以启用交叉淡入，具体办法是调整[<code>DrawableCrossFadeFactory</code>][10]里的参数并将结果传到[<code>transition()</code>][11]中。</p>
-<h4 id="Cross-fading-across-requests" class="article-heading"><a href="#Cross-fading-across-requests" class="headerlink" title="Cross fading across requests."></a>Cross fading across requests.<a class="article-anchor" href="#Cross-fading-across-requests" aria-hidden="true"></a></h4><p>[<code>Transitions</code>][1]并不能让你在不同请求中加载的两个图像之间做过渡。当新的加载被应用到View或Target(查看<a href="/glide/doc/targets.html#targets-and-automatic-cancellation">Target的文档</a>)上时，Glide默认会取消任何已经存在的请求。因此，如果你想加载连个个不同的图片并在它们之间做动画，你无法直接通过Glide来完成。等待第一个加载完成并在View外持有这个Bitmap或Drawable，然后开始新的加载并手动在这两者之间做动画，诸如此类的策略看起来有效，但是实际上不安全，并可能导致程序崩溃或图像错误。</p>
+<h4 id="在多个请求间交叉淡入" class="article-heading"><a href="#在多个请求间交叉淡入" class="headerlink" title="在多个请求间交叉淡入"></a>在多个请求间交叉淡入<a class="article-anchor" href="#在多个请求间交叉淡入" aria-hidden="true"></a></h4><p>[<code>Transitions</code>][1]并不能让你在不同请求中加载的两个图像之间做过渡。当新的加载被应用到View或Target(查看<a href="/glide/doc/targets.html#targets-and-automatic-cancellation">Target的文档</a>)上时，Glide默认会取消任何已经存在的请求。因此，如果你想加载连个个不同的图片并在它们之间做动画，你无法直接通过Glide来完成。等待第一个加载完成并在View外持有这个Bitmap或Drawable，然后开始新的加载并手动在这两者之间做动画，诸如此类的策略看起来有效，但是实际上不安全，并可能导致程序崩溃或图像错误。</p>
 <p>相反，最简单的办法是使用包含两个<a href="https://developer.android.com/reference/android/widget/ImageView.html" target="_blank" rel="external"><code>ImageView</code></a>的<a href="https://developer.android.com/reference/android/widget/ViewSwitcher.html" target="_blank" rel="external"><code>ViewSwitcher</code></a>来完成。将第一张图片加载到<a href="https://developer.android.com/reference/android/widget/ViewSwitcher.html#getNextView()" target="_blank" rel="external"><code>getNextView()</code></a>的返回值里面，然后将第二张图片加载到<a href="https://developer.android.com/reference/android/widget/ViewSwitcher.html#getNextView()" target="_blank" rel="external"><code>getNextView()</code></a>的下一个返回值中，并使用一个[<code>RequestListener</code>][5]在第二张图片加载完成时调用<a href="https://developer.android.com/reference/android/widget/ViewAnimator.html#showNext()" target="_blank" rel="external"><code>showNext()</code></a>。为了更好地控制，你也可以使用<a href="https://developer.android.com/training/animation/crossfade.html" target="_blank" rel="external">developer documentation</a>指出的策略。但要记住与<a href="https://developer.android.com/reference/android/widget/ViewSwitcher.html" target="_blank" rel="external"><code>ViewSwitcher</code></a>一样，仅在第二次图像加载完成后才开始交叉淡入淡出。</p>
-<h3 id="Custom-Transitions" class="article-heading"><a href="#Custom-Transitions" class="headerlink" title="Custom Transitions"></a>Custom Transitions<a class="article-anchor" href="#Custom-Transitions" aria-hidden="true"></a></h3><p>如果要定义一个自定义的过渡动画，你需要完成以下两个步骤：</p>
+<h3 id="定制过渡" class="article-heading"><a href="#定制过渡" class="headerlink" title="定制过渡"></a>定制过渡<a class="article-anchor" href="#定制过渡" aria-hidden="true"></a></h3><p>如果要定义一个自定义的过渡动画，你需要完成以下两个步骤：</p>
 <ol>
 <li>实现[<code>TransitionFactory</code>][21].</li>
 <li>使用[<code>DrawableTransitionOptions#with</code>][22]来将你自定义的<code>TransitionFactory</code>应用到加载中。</li>
@@ -97,7 +97,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:51:31.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -105,7 +105,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#About"><span class="toc-text">About</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Default-behavior"><span class="toc-text">Default behavior</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specifying-Transitions"><span class="toc-text">Specifying Transitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Performance-Tips"><span class="toc-text">Performance Tips</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Common-Errors"><span class="toc-text">Common Errors</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cross-fading-with-placeholders-and-transparent-images"><span class="toc-text">Cross fading with placeholders and transparent images</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cross-fading-across-requests"><span class="toc-text">Cross fading across requests.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom-Transitions"><span class="toc-text">Custom Transitions</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于过渡"><span class="toc-text">关于过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#默认行为"><span class="toc-text">默认行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定过渡"><span class="toc-text">指定过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能提示"><span class="toc-text">性能提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见错误"><span class="toc-text">常见错误</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对占位符和透明图片交叉淡入"><span class="toc-text">对占位符和透明图片交叉淡入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在多个请求间交叉淡入"><span class="toc-text">在多个请求间交叉淡入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定制过渡"><span class="toc-text">定制过渡</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
