@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Targets | Glide v4 中文站</title>
+  <title>目标 | Glide v4 中文站</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
@@ -37,17 +37,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
   <!-- Open Graph -->
-  <!-- <meta name="description" content="About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Targets[into(Tar">
+  <!-- <meta name="description" content="原文链接：点击查看 About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Target">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Targets">
+<meta property="og:title" content="目标">
 <meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/targets.html">
 <meta property="og:site_name" content="Glide v4 中文站">
-<meta property="og:description" content="About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Targets[into(Tar">
+<meta property="og:description" content="原文链接：点击查看 About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Target">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta property="og:updated_time" content="2017-09-12T05:19:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Targets">
-<meta name="twitter:description" content="About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Targets[into(Tar"> -->
+<meta name="twitter:title" content="目标">
+<meta name="twitter:description" content="原文链接：点击查看 About在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。 Specifying Target"> -->
 </head>
 
 <body>
@@ -60,11 +60,12 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Targets</h1>
-                <a href="https://github.com/hexojs/site/edit/master/source/targets.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+                <h1 class="article-title" itemprop="name">目标</h1>
+                
               </header>
               <div class="article-content" itemprop="articleBody">
-                <h3 id="About" class="article-heading"><a href="#About" class="headerlink" title="About"></a>About<a class="article-anchor" href="#About" aria-hidden="true"></a></h3><p>在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。</p>
+                <p>原文链接：<a href="http://bumptech.github.io/glide/doc/targets.html" target="_blank" rel="external">点击查看</a></p>
+<h3 id="About" class="article-heading"><a href="#About" class="headerlink" title="About"></a>About<a class="article-anchor" href="#About" aria-hidden="true"></a></h3><p>在Glide中，[Target]是介于请求和请求者之间的中介者的角色。Target负责展示占位符，加载资源，并为每个请求决定合适的尺寸。被使用得最频繁的是[ImageViewTargets][2]，它用于在ImageView上展示占位符，Drawable和Bitmap。用户还可以实现自己的Target，或者从任何可用的基类派生子类。</p>
 <h3 id="Specifying-Targets" class="article-heading"><a href="#Specifying-Targets" class="headerlink" title="Specifying Targets"></a>Specifying Targets<a class="article-anchor" href="#Specifying-Targets" aria-hidden="true"></a></h3><p>[into(Target)][3]方法不仅仅用于开启每个请求，它同时也指定了接收请求结果的Target。Glide提供了一个辅助方法[into(ImageView)][4]，它接受一个<code>ImageView</code>参数并为请求的资源类型指定了合适的<code>Target</code>。</p>
 <p>为了让使用自定义的Target更方便，<code>into()</code>方法返回了提供给它的参数：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Target&lt;Bitmap&gt; target = Glide.with(fragment)</div><div class="line">        .asBitmap()</div><div class="line">        .load(url)</div><div class="line">        .into(imageView);</div><div class="line">...</div><div class="line"><span class="comment">// Some time later:</span></div><div class="line">Glide.with(fragment).clear(target);</div></pre></td></tr></table></figure>
@@ -99,7 +100,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                <time class="article-footer-updated" datetime="2017-09-12T05:19:39.000Z" itemprop="dateModified">上次更新：2017-09-12</time>
                 
               </footer>
             </div>
@@ -115,7 +116,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link current">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link current">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configuration.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码或文档</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
   </div>
 </aside>
     </div>
@@ -125,12 +126,14 @@
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
-      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      &copy; 2017 <a href="https://github.com/Muyangmin/glide-docs-cn/graphs/contributors" target="_blank">Muyangmin</a><br>
       Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
     </div>
     <div id="footer-links">
       
 
+      
+      <a href="https://github.com/Muyangmin/glide-docs-cn" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
       
     </div>
   </div>
