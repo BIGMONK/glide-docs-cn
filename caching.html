@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Caching | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/caching.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="Glide里的缓存默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：  活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？ 内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？ 资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？ 数据来源 (Data) - 构建这个图片的资">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caching">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/caching.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="Glide里的缓存默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：  活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？ 内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？ 资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？ 数据来源 (Data) - 构建这个图片的资">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Caching">
+<meta name="twitter:description" content="Glide里的缓存默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：  活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？ 内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？ 资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？ 数据来源 (Data) - 构建这个图片的资"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Caching</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/caching.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="Glide里的缓存" class="article-heading"><a href="#Glide里的缓存" class="headerlink" title="Glide里的缓存"></a>Glide里的缓存<a class="article-anchor" href="#Glide里的缓存" aria-hidden="true"></a></h3><p>默认情况下，Glide会在开始一个新的图片请求之前检查以下多级的缓存：</p>
+<ol>
+<li>活动资源 (Active Resources) - 现在是否有另一个View正在展示这张图片？</li>
+<li>内存缓存 (Memory cache) - 该图片是否最近被加载过并仍存在于内存中？</li>
+<li>资源类型（Resource） - 该图片是否之前曾被解码、转换并写入过磁盘缓存？</li>
+<li>数据来源 (Data) - 构建这个图片的资源是否之前曾被写入过文件缓存？</li>
+</ol>
+<p>前两步检查图片是否在内存中，如果是则直接返回图片。后两步则检查图片是否在磁盘上，以便快速但异步地返回图片。</p>
+<p>如果四个步骤都未能找到图片，则Glide会返回到原始资源以取回数据（原始文件，Uri, Url等）。</p>
+<h3 id="缓存键-Cache-Keys" class="article-heading"><a href="#缓存键-Cache-Keys" class="headerlink" title="缓存键(Cache Keys)"></a>缓存键(Cache Keys)<a class="article-anchor" href="#缓存键-Cache-Keys" aria-hidden="true"></a></h3><p>在 Glide 4里，所有缓存键都包含至少两个元素：</p>
+<ol>
+<li>请求加载的model（File, Url, Url）</li>
+<li>一个可选的[<code>签名</code>(Signature)][1]</li>
+</ol>
+<p>另外，步骤1-3(活动资源，内存缓存，资源磁盘缓存)的缓存键还包含一些其他数据，包括：</p>
+<ol>
+<li>宽度和高度</li>
+<li>可选的<code>变换（Transformation）</code></li>
+<li>额外添加的任何[<code>选项(Options)</code>][2]</li>
+<li>请求的数据类型 (Bitmap, GIF, 或其他)</li>
+</ol>
+<p>活动资源和内存缓存使用的键还和磁盘资源缓存略有不同，以适应内存[<code>选项(Options)</code>][2]，比如影响Bitmap配置的选项或其他解码时才会用到的参数。</p>
+<p>为了生成磁盘缓存上的缓存键名称，以上的每个元素会被哈希化以创建一个单独的字符串键名，并在随后作为磁盘缓存上的文件名使用。</p>
+<h3 id="配置缓存" class="article-heading"><a href="#配置缓存" class="headerlink" title="配置缓存"></a>配置缓存<a class="article-anchor" href="#配置缓存" aria-hidden="true"></a></h3><p>Glide提供一系列的选项，以允许你选择加载请求与Glide缓存如何交互。</p>
+<h4 id="磁盘缓存策略（Disk-Cache-Strategy）" class="article-heading"><a href="#磁盘缓存策略（Disk-Cache-Strategy）" class="headerlink" title="磁盘缓存策略（Disk Cache Strategy）"></a>磁盘缓存策略（Disk Cache Strategy）<a class="article-anchor" href="#磁盘缓存策略（Disk-Cache-Strategy）" aria-hidden="true"></a></h4><p>[<code>DiskCacheStrategy</code>][10] 可被[<code>diskCacheStrategy</code>][11]方法应用到每一个单独的请求。 目前支持的策略允许你阻止加载过程使用或写入磁盘缓存，选择性地仅缓存无修改的原生数据，或仅缓存变换过的缩略图，或是兼而有之。</p>
+<p>默认的策略叫做[<code>AUTOMATIC</code>][12]，它会尝试对本地和远程图片使用最佳的策略。当你加载远程数据（比如，从URL下载）时，<code>AUTOMATIC</code>策略仅会存储未被你的加载过程修改过(比如，变换，裁剪–译者注)的原始数据，因为下载远程数据相比调整磁盘上已经存在的数据要昂贵得多。对于本地数据，<code>AUTOMATIC</code>策略则会仅存储变换过的缩略图，因为即使你需要再次生成另一个尺寸或类型的图片，取回原始数据也很容易。</p>
+<p>指定[<code>DiskCacheStrategy</code>][10]非常容易:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .diskCacheStrategy(DiskCacheStrategy.ALL)</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
+<h4 id="仅从缓存加载图片" class="article-heading"><a href="#仅从缓存加载图片" class="headerlink" title="仅从缓存加载图片"></a>仅从缓存加载图片<a class="article-anchor" href="#仅从缓存加载图片" aria-hidden="true"></a></h4><p>某些情形下，你可能希望只要图片不在缓存中则加载直接失败（<em>比如省流量模式？–译者注</em>）。如果要完成这个目标，你可以在单个请求的基础上使用[<code>onlyRetrieveFromCache</code>][8]方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .onlyRetrieveFromCache(<span class="keyword">true</span>)</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
+<p>如果图片在内存缓存或在磁盘缓存中，它会被展示出来。否则只要这个选项被设置为true，这次加载会视同失败。</p>
+<h4 id="跳过缓存" class="article-heading"><a href="#跳过缓存" class="headerlink" title="跳过缓存"></a>跳过缓存<a class="article-anchor" href="#跳过缓存" aria-hidden="true"></a></h4><p>如果你想确保一个特定的请求跳过磁盘和/或内存缓存（<em>比如，图片验证码 –译者注</em>），Glide也提供了一些替代方案。</p>
+<p>仅跳过内存缓存，请使用[<code>skipMemoryCache()</code>][15]:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .skipMemoryCache(<span class="keyword">true</span>)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>仅跳过磁盘缓存，请使用[<code>DiskCacheStrategy.NONE</code>][16]:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .diskCacheStrategy(DiskCacheStrategy.NONE)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>这两个选项可以同时使用:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .diskCacheStrategy(DiskCacheStrategy.NONE)</div><div class="line">  .skipMemoryCache(<span class="keyword">true</span>)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>虽然提供了这些办法让你跳过缓存，但你通常应该不会想这么做。从缓存中加载一个图片，要比拉取-解码-转换成一张新图片的完整流程快得多。</p>
+<p>如果你只是想更新缓存中的某个条目，请继续阅读下面关于[<code>invalidation</code>][17]一节的介绍。</p>
+<h4 id="Implementation" class="article-heading"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation<a class="article-anchor" href="#Implementation" aria-hidden="true"></a></h4><p>如果内置的选项不满足你的需求，你也可以编写你自己的[<code>DiskCache</code>][13]实现。请查看[配置][14]页获得更多信息。</p>
+<h3 id="Cache-Invalidation" class="article-heading"><a href="#Cache-Invalidation" class="headerlink" title="Cache Invalidation"></a>Cache Invalidation<a class="article-anchor" href="#Cache-Invalidation" aria-hidden="true"></a></h3><p>因为磁盘缓存使用的是哈希键，所以<strong>并没有</strong>一个比较好的方式来简单地删除某个特定url或文件路径对应的所有缓存文件。如果你只允许加载或缓存原始图片的话，问题可能会变得更简单，但因为Glide还会缓存缩略图和提供多种变换(<code>transformation</code>)，它们中的任何一个都会导致在缓存中创建一个新的文件，而要跟踪和删除一个图片的所有版本无疑是困难的。</p>
+<p>在实践中，使缓存文件无效的最佳方式是在内容发生变化时（url，uri，文件路径等）更改你的标识符。</p>
+<h4 id="Custom-Cache-Invalidation" class="article-heading"><a href="#Custom-Cache-Invalidation" class="headerlink" title="Custom Cache Invalidation"></a>Custom Cache Invalidation<a class="article-anchor" href="#Custom-Cache-Invalidation" aria-hidden="true"></a></h4><p>因为通常改变标识符比较困难或者根本不可能，所以Glide也提供了[<code>签名</code>][1]API来混合（你可以控制的）额外数据到你的缓存键中。签名(<code>signature</code>)适用于媒体内容，也适用于你可以自行维护的一些版本元数据。</p>
+<ul>
+<li>MediaStore 内容 - 对于媒体存储内容，你可以使用Glide的[<code>MediaStoreSignature</code>][3]类作为你的签名。<code>MediaStoreSignature</code> 允许你混入修改时间、MIME类型，以及item的方向到缓存键中。这三个属性能够可靠地捕获对图片的编辑和更新，这可以允许你缓存媒体存储的缩略图。</li>
+<li>文件 - 你可以使用[<code>ObjectKey</code>][4]来混入文件的修改日期。</li>
+<li>Url - 尽管最好的让url失效的办法是让server保证在内容变更时对URL做出改变，你仍然可以使用[<code>ObjectKey</code>][4]来混入任意数据（比如版本号）。</li>
+</ul>
+<p>将签名传入加载请求很简单：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(yourFragment)</div><div class="line">    .load(yourFileDataModel)</div><div class="line">    .signature(<span class="keyword">new</span> ObjectKey(yourVersionMetadata))</div><div class="line">    .into(yourImageView);</div></pre></td></tr></table></figure>
+<p>媒体存储签名对于MediaStore数据来说也很直接：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">    .load(mediaStoreUri)</div><div class="line">    .signature(<span class="keyword">new</span> MediaStoreSignature(mimeType, dateModified, orientation))</div><div class="line">    .into(view);</div></pre></td></tr></table></figure></p>
+<p>你还可以定义你自己的签名，只要实现[<code>Key</code>][5]接口就好。请确保正确地实现<code>equals()</code>, <code>hashCode()</code> 和<code>updateDiskCacheKey()</code> 方法:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntegerVersionSignature</span> <span class="keyword">implements</span> <span class="title">Key</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> currentVersion;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">IntegerVersionSignature</span><span class="params">(<span class="keyword">int</span> currentVersion)</span> </span>&#123;</div><div class="line">         <span class="keyword">this</span>.currentVersion = currentVersion;</div><div class="line">    &#125;</div><div class="line">   </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> IntegerVersionSignature) &#123;</div><div class="line">            IntegerVersionSignature other = (IntegerVersionSignature) o;</div><div class="line">            <span class="keyword">return</span> currentVersion = other.currentVersion;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> currentVersion;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateDiskCacheKey</span><span class="params">(MessageDigest md)</span> </span>&#123;</div><div class="line">        messageDigest.update(ByteBuffer.allocate(Integer.SIZE).putInt(signature).array());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请记住，为了避免降低性能，您将需要在后台批量加载任何版本元数据，以便在要加载图像时即已处于可用状态。</p>
+<p>如果这些努力都无法奏效，您不能更改标识符，也不能跟踪任何合理的版本元数据的情况下，也可以使用[<code>diskCacheStrategy（）`][6]和[`DiskCacheStrategy.NONE</code>][7]来完全禁用磁盘缓存。</p>
+<p>[1]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#signature-com.bumptech.glide.load.Key-<br>[2]: /glide/javadocs/400/com/bumptech/glide/load/Option.html<br>[3]: /glide/javadocs/400/com/bumptech/glide/signature/MediaStoreSignature.html<br>[4]: /glide/javadocs/400/com/bumptech/glide/signature/ObjectKey.html<br>[5]: /glide/javadocs/400/com/bumptech/glide/load/Key.html<br>[6]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#diskCacheStrategy-com.bumptech.glide.load.engine.DiskCacheStrategy-<br>[7]: /glide/javadocs/400/com/bumptech/glide/load/engine/DiskCacheStrategy.html#NONE<br>[8]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#onlyRetrieveFromCache-boolean-<br>[9]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html<br>[10]: /glide/javadocs/400/com/bumptech/glide/load/engine/DiskCacheStrategy.html<br>[11]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#diskCacheStrategy-com.bumptech.glide.load.engine.DiskCacheStrategy-<br>[12]: /glide/javadocs/400/com/bumptech/glide/load/engine/DiskCacheStrategy.html#AUTOMATIC<br>[13]: /glide/javadocs/400/com/bumptech/glide/load/engine/cache/DiskCache.html<br>[14]: /glide/doc/configuration.html#disk-cache<br>[15]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#skipMemoryCache-boolean-<br>[16]: /glide/javadocs/400/com/bumptech/glide/load/engine/DiskCacheStrategy.html#NONE<br>[17]: /glide/doc/caching.html#cache-invalidation</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Glide里的缓存"><span class="toc-text">Glide里的缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存键-Cache-Keys"><span class="toc-text">缓存键(Cache Keys)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置缓存"><span class="toc-text">配置缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘缓存策略（Disk-Cache-Strategy）"><span class="toc-text">磁盘缓存策略（Disk Cache Strategy）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仅从缓存加载图片"><span class="toc-text">仅从缓存加载图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跳过缓存"><span class="toc-text">跳过缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Implementation"><span class="toc-text">Implementation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache-Invalidation"><span class="toc-text">Cache Invalidation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Custom-Cache-Invalidation"><span class="toc-text">Custom Cache Invalidation</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link current">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>

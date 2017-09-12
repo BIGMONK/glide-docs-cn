@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Configuration | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/configuration.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="Setup为了让Glide正常工作，库和应用程序需要做一些固定的步骤。不过，假如你的库不希望注册额外的组件，则这些初始化不是必须的。 Libraries程序库(Libraries)需要：  添加一个或多个[LibraryGlideModule][2]实现。 为每一个[LibraryGlideModule][2]实现添加[@GlideModule][5]注解。 添加Glide的注解解析器的依赖。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Configuration">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/configuration.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="Setup为了让Glide正常工作，库和应用程序需要做一些固定的步骤。不过，假如你的库不希望注册额外的组件，则这些初始化不是必须的。 Libraries程序库(Libraries)需要：  添加一个或多个[LibraryGlideModule][2]实现。 为每一个[LibraryGlideModule][2]实现添加[@GlideModule][5]注解。 添加Glide的注解解析器的依赖。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Configuration">
+<meta name="twitter:description" content="Setup为了让Glide正常工作，库和应用程序需要做一些固定的步骤。不过，假如你的库不希望注册额外的组件，则这些初始化不是必须的。 Libraries程序库(Libraries)需要：  添加一个或多个[LibraryGlideModule][2]实现。 为每一个[LibraryGlideModule][2]实现添加[@GlideModule][5]注解。 添加Glide的注解解析器的依赖。"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Configuration</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/configuration.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="Setup" class="article-heading"><a href="#Setup" class="headerlink" title="Setup"></a>Setup<a class="article-anchor" href="#Setup" aria-hidden="true"></a></h3><p>为了让Glide正常工作，库和应用程序需要做一些固定的步骤。不过，假如你的库不希望注册额外的组件，则这些初始化不是必须的。</p>
+<h4 id="Libraries" class="article-heading"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries<a class="article-anchor" href="#Libraries" aria-hidden="true"></a></h4><p>程序库(Libraries)需要：</p>
+<ol>
+<li>添加一个或多个[<code>LibraryGlideModule</code>][2]实现。</li>
+<li>为每一个[<code>LibraryGlideModule</code>][2]实现添加[<code>@GlideModule</code>][5]注解。</li>
+<li>添加Glide的注解解析器的依赖。</li>
+</ol>
+<p>An example [<code>LibraryGlideModule</code>][2] from Glide’s [OkHttp integration library][7] looks like this<br>在Glide的[OkHttp 集成库][7]中有一个[<code>LibraryGlideModule</code>][2]的示例实现，它看起来长这样：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">OkHttpLibraryGlideModule</span> <span class="keyword">extends</span> <span class="title">LibraryGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.replace(GlideUrl.class, InputStream.class, <span class="keyword">new</span> OkHttpUrlLoader.Factory());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>要使用[<code>@GlideModule</code>][5]注解，需要有对Glide注解的依赖：<br><figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">compile <span class="string">'com.github.bumptech.glide:annotations:4.0.0'</span></div></pre></td></tr></table></figure></p>
+<h4 id="Applications" class="article-heading"><a href="#Applications" class="headerlink" title="Applications"></a>Applications<a class="article-anchor" href="#Applications" aria-hidden="true"></a></h4><p>应用程序(Applications)需要：</p>
+<ol>
+<li>恰当地添加一个[<code>AppGlideModule</code>][1]实现。</li>
+<li>(可选)添加一个或多个[<code>LibraryGlideModule</code>][2]实现。</li>
+<li>给上述两种实现添加[<code>@GlideModule</code>][5]注解。</li>
+<li>添加对Glide的注解解析器的依赖。</li>
+<li>在proguard中，添加对[<code>AppGlideModules</code>][1]的keep。</li>
+</ol>
+<p>在Glide的[Flickr 示例应用][8]中，有一个[<code>AppGlideModule</code>][1]的示例实现：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlickrGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.append(Photo.class, InputStream.class, <span class="keyword">new</span> FlickrModelLoader.Factory());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>请注意添加对Glide的注解和注解解析器的依赖：<br><figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">compile <span class="string">'com.github.bumptech.glideannotations4.0.0'</span></div><div class="line">annotationProcessor <span class="string">'com.github.bumptech.glidecompiler4.0.0'</span></div></pre></td></tr></table></figure></p>
+<p>最后，你应该在你的<code>proguard.cfg</code>中keep住你的AppGlideModule实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-keep public class  extends com.bumptech.glide.module.AppGlideModule</div><div class="line">-keep class com.bumptech.glide.GeneratedAppGlideModuleImpl</div></pre></td></tr></table></figure></p>
+<h3 id="Application-Options" class="article-heading"><a href="#Application-Options" class="headerlink" title="Application Options"></a>Application Options<a class="article-anchor" href="#Application-Options" aria-hidden="true"></a></h3><p>Glide允许应用通过[<code>AppGlideModule</code>][1]实现来完全控制Glide的内存和磁盘缓存使用。Glide试图提供对大部分应用程序合理的默认选项，但对于部分应用，可能就需要定制这些值。在你做任何改变时，请注意测量其结果，避免出现性能的倒退。</p>
+<h4 id="Memory-cache" class="article-heading"><a href="#Memory-cache" class="headerlink" title="Memory cache"></a>Memory cache<a class="article-anchor" href="#Memory-cache" aria-hidden="true"></a></h4><p>默认情况下，Glide使用[<code>LruResourceCache</code>][10]，这是[<code>MemoryCache</code>][9]接口的一个缺省实现，使用固定大小的内存和LRU算法。[<code>LruResourceCache</code>][10]的大小由Glide的[<code>MemorySizeCalculator</code>][11]类来决定，这个类主要关注设备的内存类型，设备RAM大小，以及屏幕分辨率。</p>
+<p>应用程序可以自定义[<code>MemoryCache</code>][9]的大小，具体是在它们的[<code>AppGlideModule</code>][1]中使用[<code>applyOptions(Context, GlideBuilder)</code>][12]方法配置[<code>MemorySizeCalculator</code>][11]：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    MemorySizeCalculator calculator = <span class="keyword">new</span> MemorySizeCalculator.Builder(context)</div><div class="line">        .setMemoryCacheScreens(<span class="number">2</span>)</div><div class="line">        .build();</div><div class="line">    builder.setMemoryCache(<span class="keyword">new</span> LruResourceCache(calculator.getMemoryCacheSize()));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以直接覆写缓存大小：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> memoryCacheSizeBytes = <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">20</span>; <span class="comment">// 20mb</span></div><div class="line">    builder.setMemoryCache(<span class="keyword">new</span> LruResourceCache(memoryCacheSizeBytes));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>甚至可以提供自己的[<code>MemoryCache</code>][9]实现：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    builder.setMemoryCache(<span class="keyword">new</span> YourAppMemoryCacheImpl());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="Disk-Cache" class="article-heading"><a href="#Disk-Cache" class="headerlink" title="Disk Cache"></a>Disk Cache<a class="article-anchor" href="#Disk-Cache" aria-hidden="true"></a></h4><p>Glide使用[<code>DiskLruCacheWrapper</code>][13]作为默认的[<code>磁盘缓存</code>][14]。[<code>DiskLruCacheWrapper</code>][13]是一个使用LRU算法的固定大小的磁盘缓存。默认磁盘大小为[250 MB][15]，位置是在应用的[缓存文件夹][17]中的一个[特定目录][16]。</p>
+<p>假如应用程序展示的媒体内容是公开的（从无授权机制的网站上加载，或搜索引擎等），那么应用可以将这个缓存位置改到外部存储：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    builder.setDiskCache(<span class="keyword">new</span> ExternalDiskCacheFactory(context));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>无论使用内部或外部磁盘缓存，应用程序都可以改变磁盘缓存的大小：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> diskCacheSizeBytes = <span class="number">1024</span>  <span class="number">1024</span>  <span class="number">100</span>;  <span class="number">100</span> MB</div><div class="line">    builder.setDiskCache(<span class="keyword">new</span> InternalDiskCacheFactory(context, diskCacheSizeBytes));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>应用程序还可以改变缓存文件夹在外存或内存上的名字：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> diskCacheSizeBytes = <span class="number">1024</span>  <span class="number">1024</span>  <span class="number">100</span>;  <span class="number">100</span> MB</div><div class="line">    builder.setDiskCache(</div><div class="line">        <span class="keyword">new</span> InternalDiskCacheFactory(context, cacheFolderName, diskCacheSizeBytes));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>应用程序还可以自行选择[<code>DiskCache</code>][14]接口的实现，并提供自己的[<code>DiskCache.Factory</code>][18]来创建缓存。Glide使用一个工厂接口来在后台线程中打开[<code>磁盘缓存</code>][14]，这样方便缓存做诸如检查路径存在性等的IO操作而不用触发[严格模式][19]。<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    builder.setDiskCache(<span class="keyword">new</span> DiskCache.Factory() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> DiskCache <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">          <span class="keyword">return</span> <span class="keyword">new</span> YourAppCustomDiskCache();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Registering-Components" class="article-heading"><a href="#Registering-Components" class="headerlink" title="Registering Components"></a>Registering Components<a class="article-anchor" href="#Registering-Components" aria-hidden="true"></a></h3><p>应用程序和库都可以注册很多组件来扩展Glide的功能。可用的组件包括：</p>
+<ol>
+<li>[<code>ModelLoader</code>][23], 用于加载自定义的Model(Url, Uri,任意的POJO)和Data(InputStreams, FileDescriptors)。</li>
+<li>[<code>ResourceDecoder</code>][24], 用于对新的Resources(Drawables, Bitmaps)或新的Data类型(InputStreams, FileDescriptors)进行解码。</li>
+<li>[<code>Encoder</code>][25], 用于向Glide的磁盘缓存写Data (InputStreams, FileDesciptors)。</li>
+<li>[<code>ResourceTranscoder</code>][26]，用于在不同的资源类型之间做转换，例如，从BitmapResource转换为DrawableResource。</li>
+<li>[<code>ResourceEncoder</code>][27]，用于向Glide的磁盘缓存写Resources(BitmapResource, DrawableResource)。</li>
+</ol>
+<p>组件通过[<code>Registry</code>][28]类来注册。例如，添加一个<code>ModelLoader</code>，使其能从自定义的Model对象中创建一个InputStream：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YourAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.append(Photo.class, InputStream.class, <span class="keyword">new</span> CustomModelLoader.Factory());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在一个<code>GlideModule</code>里可以注册很多组件。[<code>ModelLoader</code>][23]和[<code>ResourceDecoder</code>][24]对于同样的参数类型还可以有多种实现。</p>
+<p>The set of registered components, including both those registered by default in Glide and those registered in Modules are used to define a set of load paths. Each load path is a step by step progression from the the Model provided to [<code>load()</code>][29] to the Resource type specified by [<code>as()</code>][30]. A load path consists (roughly) of the following steps</p>
+<ol>
+<li>Model - Data (handled by <code>ModelLoader</code>s)</li>
+<li>Data - Resource (handled by <code>ResourceDecoder</code>s)</li>
+<li>Resource - Transcoded Resource (optional, handled by <code>ResourceTranscoder</code>s).</li>
+</ol>
+<p><code>Encoder</code>s can write Data to Glide’s disk cache cache before step 2.<br><code>ResourceEncoder</code>s can write Resource’s to Glide’s disk cache before step 3. </p>
+<p>When a request is started, Glide will attempt all available paths from the Model to the requested Resource type. A request will succeed if any load path succeeds. A request will fail only if all available load paths fail.  </p>
+<p>The <code>prepend()</code>, <code>append()</code>, and <code>replace()</code> methods in [<code>Registry</code>][28] can be used to set the order in which Glide will attempt each <code>ModelLoader</code> and <code>ResourceDecoder</code>. Requests can be made somewhat more efficient by making sure the <code>ModelLoader</code>s and <code>ResourceDecoder</code>s that handle the most common types are registered first. Ordering components can also allow you to register components that handle specific subsets of models or data (ie only certain types of Uris, or only certain image formats) while also having an appended catch-all component to handle the rest.</p>
+<h3 id="Module-classes-and-annotations" class="article-heading"><a href="#Module-classes-and-annotations" class="headerlink" title="Module classes and annotations."></a>Module classes and annotations.<a class="article-anchor" href="#Module-classes-and-annotations" aria-hidden="true"></a></h3><p>Glide v4 relies on two classes, [<code>AppGlideModule</code>][1] and [<code>LibraryGlideModule</code>][2], to configure the Glide singleton. Both classes are allowed to register additional components, like [<code>ModelLoaders</code>][3], [<code>ResourceDecoders</code>][4] etc. Only the [<code>AppGlideModules</code>][1] are allowed to configure application specific settings, like cache implementations and sizes. </p>
+<h4 id="AppGlideModule" class="article-heading"><a href="#AppGlideModule" class="headerlink" title="AppGlideModule"></a>AppGlideModule<a class="article-anchor" href="#AppGlideModule" aria-hidden="true"></a></h4><p>All applications must add a [<code>AppGlideModule</code>][1] implementation, even if the Application is not changing any additional settings or implementing any methods in [<code>AppGlideModule</code>][1]. The [<code>AppGlideModule</code>][1] implementation acts as a signal that allows Glide’s annotation processor to generate a single combined class with with all discovered [<code>LibraryGlideModules</code>][2].</p>
+<p>There can be only one [<code>AppGlideModule</code>][1] implementation in a given application (having more than one produce errors at compile time). As a result, libraries must never provide a [<code>AppGlideModule</code>][1] implementation. </p>
+<h4 id="GlideModule" class="article-heading"><a href="#GlideModule" class="headerlink" title="@GlideModule"></a>@GlideModule<a class="article-anchor" href="#GlideModule" aria-hidden="true"></a></h4><p>In order for Glide to properly discover [<code>AppGlideModule</code>][1] and [<code>LibraryGlideModule</code>][2] implementations, all implementations of both classes must be annotated with the [<code>@GlideModule</code>][5] annotation. The annotation will allow Glide’s [annotation processor][6] to discover all implementations at compile time. </p>
+<h4 id="Annotation-Processor" class="article-heading"><a href="#Annotation-Processor" class="headerlink" title="Annotation Processor"></a>Annotation Processor<a class="article-anchor" href="#Annotation-Processor" aria-hidden="true"></a></h4><p>In addition, to enable discovery of the [<code>AppGlideModule</code>][1] and [<code>LibraryGlideModules</code>][2] all libraries and applications must also include a dependency on Glide’s annotation processor. </p>
+<h3 id="Conflicts" class="article-heading"><a href="#Conflicts" class="headerlink" title="Conflicts"></a>Conflicts<a class="article-anchor" href="#Conflicts" aria-hidden="true"></a></h3><p>Applications may depend on multiple libraries, each of which may contain one or more [<code>LibraryGlideModules</code>][2]. In rare cases, these [<code>LibraryGlideModules</code>][2] may define conflicting options or otherwise include behavior the application would like to avoid. Applications can resolve these conflicts or avoid unwanted dependencies by adding an [<code>@Excludes</code>][20] annotation to their [<code>AppGlideModule</code>][1].</p>
+<p>For example if you depend on a library that has a [<code>LibraryGlideModule</code>][2] that you’d like to avoid, say <code>com.example.unwanted.GlideModule</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Excludes</span>(com.example.unwanted.GlideModule)</div><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123; &#125;</div></pre></td></tr></table></figure>
+<p>You can also excludes multiple modules</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@Excludes</span>(&#123;com.example.unwanted.GlideModule, com.example.conflicing.GlideModule&#125;)</div><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123; &#125;</div></pre></td></tr></table></figure>
+<p>[<code>@Excludes</code>][20] can be used to exclude both [<code>LibraryGlideModules</code>][2] and legacy, deprecated [<code>GlideModule</code>][21] implementations if you’re still in the process of migrating from Glide v3.</p>
+<h3 id="Manifest-Parsing" class="article-heading"><a href="#Manifest-Parsing" class="headerlink" title="Manifest Parsing"></a>Manifest Parsing<a class="article-anchor" href="#Manifest-Parsing" aria-hidden="true"></a></h3><p>To maintain backward compatibility with Glide v3’s [<code>GlideModules</code>][21], Glide still parses <code>AndroidManifest.xml</code> files from both the application and any included libraries and will include any legacy [<code>GlideModules</code>][21] listed in the manifest. Although this functionality will be removed in a future version, we’ve retained the behavior for now to ease the transition.</p>
+<p>If you’ve already migrated to the Glide v4 [<code>AppGlideModule</code>][1] and [<code>LibraryGlideModule</code>][2], you can disable manifest parsing entirely. Doing so can improve the initial startup time of Glide and avoid some potential problems with trying to parse metadata. To disable manifest parsing, override the [<code>isManifestParsingEnabled()</code>][22] method in your [<code>AppGlideModule</code>][1] implemenation</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAppGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isManifestParsingEnabled</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>[1] glidejavadocs400combumptechglidemoduleAppGlideModule.html<br>[2] glidejavadocs400combumptechglidemoduleLibraryGlideModule.html<br>[3] glidejavadocs400combumptechglideloadmodelModelLoader.html<br>[4] glidejavadocs400combumptechglideloadResourceDecoder.html<br>[5] glidejavadocs400combumptechglideannotationGlideModule.html<br>[6] glidejavadocs400combumptechglideannotationcompilerGlideAnnotationProcessor.html<br>[7] httpsgithub.combumptechglideblobmasterintegrationokhttp3srcmainjavacombumptechglideintegrationokhttp3OkHttpLibraryGlideModule.java<br>[8] httpsgithub.combumptechglideblobmastersamplesflickrsrcmainjavacombumptechglidesamplesflickrFlickrGlideModule.java<br>[9] glidejavadocs400combumptechglideloadenginecacheMemoryCache.html<br>[10] glidejavadocs400combumptechglideloadenginecacheLruResourceCache.html<br>[11] glidejavadocs400combumptechglideloadenginecacheMemorySizeCalculator.html<br>[12] glidejavadocs400combumptechglidemoduleAppGlideModule.html#applyOptions-android.content.Context-com.bumptech.glide.GlideBuilder-<br>[13] glidejavadocs400combumptechglideloadenginecacheDiskLruCacheWrapper.html<br>[14] glidejavadocs400combumptechglideloadenginecacheDiskCache.html<br>[15] glidejavadocs400combumptechglideloadenginecacheDiskCache.Factory.html#DEFAULT_DISK_CACHE_SIZE<br>[16] glidejavadocs400combumptechglideloadenginecacheDiskCache.Factory.html#DEFAULT_DISK_CACHE_DIR<br>[17] httpsdeveloper.android.comreferenceandroidcontentContext.html#getCacheDir()<br>[18] glidejavadocs400combumptechglideloadenginecacheDiskCache.Factory.html<br>[19] httpsdeveloper.android.comreferenceandroidosStrictMode.html<br>[20] glidejavadocs400combumptechglideannotationExcludes.html<br>[21] glidejavadocs400combumptechglidemoduleGlideModule.html<br>[22] glidejavadocs400combumptechglidemoduleAppGlideModule.html#isManifestParsingEnabled–<br>[23] glidejavadocs400combumptechglideloadmodelModelLoaderFactory.html<br>[24] glidejavadocs400combumptechglideloadResourceDecoder.html<br>[25] glidejavadocs400combumptechglideloadEncoder.html<br>[26] glidejavadocs400combumptechglideloadresourcetranscodeResourceTranscoder.html<br>[27] glidejavadocs400combumptechglideloadResourceEncoder.html<br>[28] glidejavadocs400combumptechglideRegistry.html<br>[29] glidejavadocs400combumptechglideRequestBuilder.html#load-java.lang.Object-<br>[30] glidejavadocs400combumptechglideRequestManager.html#as-java.lang.Class-</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Setup"><span class="toc-text">Setup</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Libraries"><span class="toc-text">Libraries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Applications"><span class="toc-text">Applications</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-Options"><span class="toc-text">Application Options</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Memory-cache"><span class="toc-text">Memory cache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Disk-Cache"><span class="toc-text">Disk Cache</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Registering-Components"><span class="toc-text">Registering Components</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Module-classes-and-annotations"><span class="toc-text">Module classes and annotations.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AppGlideModule"><span class="toc-text">AppGlideModule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GlideModule"><span class="toc-text">@GlideModule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Annotation-Processor"><span class="toc-text">Annotation Processor</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conflicts"><span class="toc-text">Conflicts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manifest-Parsing"><span class="toc-text">Manifest Parsing</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>

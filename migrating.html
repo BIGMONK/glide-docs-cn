@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Migrating from v3 to v4 | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/migrating.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="选项(Options)Glide v4 中的一个比较大的改动是Glide库处理选项(centerCrop(), placeholder() 等)的方式。在v3版本中，选项由一系列复杂的异构建造者(multityped builders)单独处理。在新版本中，由一个单一类型的唯一一个建造者接管一系列选项对象。Glide的自生成API进一步简化了这个操作：它会合并传入建造者的选项对象和任何已包含的集成">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Migrating from v3 to v4">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/migrating.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="选项(Options)Glide v4 中的一个比较大的改动是Glide库处理选项(centerCrop(), placeholder() 等)的方式。在v3版本中，选项由一系列复杂的异构建造者(multityped builders)单独处理。在新版本中，由一个单一类型的唯一一个建造者接管一系列选项对象。Glide的自生成API进一步简化了这个操作：它会合并传入建造者的选项对象和任何已包含的集成">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Migrating from v3 to v4">
+<meta name="twitter:description" content="选项(Options)Glide v4 中的一个比较大的改动是Glide库处理选项(centerCrop(), placeholder() 等)的方式。在v3版本中，选项由一系列复杂的异构建造者(multityped builders)单独处理。在新版本中，由一个单一类型的唯一一个建造者接管一系列选项对象。Glide的自生成API进一步简化了这个操作：它会合并传入建造者的选项对象和任何已包含的集成"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Migrating from v3 to v4</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/migrating.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="选项-Options" class="article-heading"><a href="#选项-Options" class="headerlink" title="选项(Options)"></a>选项(Options)<a class="article-anchor" href="#选项-Options" aria-hidden="true"></a></h2><p>Glide v4 中的一个比较大的改动是Glide库处理选项(<code>centerCrop()</code>, <code>placeholder()</code> 等)的方式。在v3版本中，选项由一系列复杂的异构建造者(multityped builders)单独处理。在新版本中，由一个单一类型的唯一一个建造者接管一系列选项对象。Glide的<a href="generatedapi.html">自生成API</a>进一步简化了这个操作：它会合并传入建造者的选项对象和任何已包含的集成库里的选项，以生成一个流畅的API。</p>
+<h3 id="RequestBuilder" class="article-heading"><a href="#RequestBuilder" class="headerlink" title="RequestBuilder"></a>RequestBuilder<a class="article-anchor" href="#RequestBuilder" aria-hidden="true"></a></h3><p>对于这类方法：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">listener()</div><div class="line">thumbnail()</div><div class="line">load()</div><div class="line">into()</div></pre></td></tr></table></figure></p>
+<p>在Glide v4 版本中，只存在一个[<code>RequestBuilder</code>][5]对应一个你正在试图加载的类型(<code>Bitmap</code>, <code>Drawable</code>, <code>GifDrawable</code> 等)。 <code>RequestBuilder</code>可以直接访问对这个加载过程有影响的选项，包括你想加载的数据模型（url, uri等），可能存在的[<code>缩略图</code>][6]请求，以及任何的[<code>监听器</code>][7]。<code>RequestBuilder</code>也是你使用[<code>into()</code>][8] 或者 [<code>preload()</code>][9]方法开始加载的地方：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder = Glide.with(fragment)</div><div class="line">    .load(url);</div><div class="line"></div><div class="line">requestBuilder</div><div class="line">    .thumbnail(Glide.with(fragment)</div><div class="line">        .load(thumbnailUrl))</div><div class="line">    .listener(requestListener)</div><div class="line">    .load(url)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<h3 id="RequestOptions" class="article-heading"><a href="#RequestOptions" class="headerlink" title="RequestOptions"></a>RequestOptions<a class="article-anchor" href="#RequestOptions" aria-hidden="true"></a></h3><p>对于这类方法：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">centerCrop()</div><div class="line">placeholder()</div><div class="line">error()</div><div class="line">priority()</div><div class="line">diskCacheStrategy()</div></pre></td></tr></table></figure></p>
+<p>大部分选项被移动到了一个单独的称为[<code>RequestOptions</code>][10]的对象中，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RequestOptions options = new RequestOptions()</div><div class="line">    .centerCrop()</div><div class="line">    .placeholder(R.drawable.placeholder)</div><div class="line">    .error(R.drawable.error)</div><div class="line">    .priority(Priority.HIGH);</div></pre></td></tr></table></figure>
+<p><code>RequestOptions</code>允许你一次指定一系列的选项，然后对多个加载重用它们：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions myOptions = <span class="keyword">new</span> RequestOptions()</div><div class="line">    .fitCenter()</div><div class="line">    .override(<span class="number">100</span>, <span class="number">100</span>);</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(myOptions)</div><div class="line">    .into(drawableView);</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .asBitmap()</div><div class="line">    .apply(myOptions)</div><div class="line">    .load(url)</div><div class="line">    .into(bitmapView);</div></pre></td></tr></table></figure>
+<h3 id="TransitionOptions" class="article-heading"><a href="#TransitionOptions" class="headerlink" title="TransitionOptions"></a>TransitionOptions<a class="article-anchor" href="#TransitionOptions" aria-hidden="true"></a></h3><p>对于这类方法：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">crossFade()</div><div class="line">animate()</div></pre></td></tr></table></figure></p>
+<p>控制从占位符到图片和/或缩略图到全图的变换的选项，被移动到了[<code>TransitionOptions</code>][13]中。</p>
+<p>要应用过渡（之前的动画），请使用下列选项中符合你请求的资源类型的一个：</p>
+<ul>
+<li>[<code>GenericTransitionOptions</code>][14]</li>
+<li>[<code>DrawableTransitionOptions</code>][15]</li>
+<li>[<code>BitmapTransitionOptions</code>][16]</li>
+</ul>
+<p>如果你想移除任何默认的过渡，可以使用<code>TransitionOptions.dontTransition()</code>][17]。</p>
+<p>过渡动画通过[<code>RequestBuilder</code>][5]应用到请求上：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .transition(withCrossFade(R.anim.fade_in, <span class="number">300</span>));</div></pre></td></tr></table></figure>
+<h3 id="Generated-API" class="article-heading"><a href="#Generated-API" class="headerlink" title="Generated API"></a>Generated API<a class="article-anchor" href="#Generated-API" aria-hidden="true"></a></h3><p>为了让使用Glide v4更简单轻松，Glide现在也提供了一套可以为应用定制化生成的API。应用可以通过包含一个标记了[<code>AppGlideModule</code>][[2]的实现来访问生成的API。如果你不了解这是怎么工作的，可以查看<a href="generatedapi.html">Generated API</a>。</p>
+<p>生成的API添加了一个<code>GlideApp</code>类，该类提供了对<code>RequestBuilder</code>和<code>RequestOptions</code>子类的访问。<code>RequestOptions</code>的子类包含了所有<code>RequestOptions</code>中的方法，以及[<code>GlideExtensions</code>][12]中定义的方法。<code>RequestBuilder</code>的子类则提供了生成的<code>RequestOptions</code>中所有方法的访问，而不需要你再手动调用<code>apply</code>。举个例子：</p>
+<p>在没有使用生成API时，请求大概长这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(centerCropTransform()</div><div class="line">        .placeholder(R.drawable.placeholder)</div><div class="line">        .error(R.drawable.error)</div><div class="line">        .priority(Priority.HIGH))</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<p>使用生成的API，<code>RequestOptions</code>的调用可以被内联：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .centerCrop()</div><div class="line">    .placeholder(R.drawable.placeholder)</div><div class="line">    .error(R.drawable.error)</div><div class="line">    .priority(Priority.HIGH)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<p>你仍然可以使用生成的<code>RequestOptions</code>子类来应用相同的选项到多次加载中；但生成的<code>RequestBuilder</code>子类可能在多数情况下更为方便。</p>
+<h2 id="Types-and-Targets" class="article-heading"><a href="#Types-and-Targets" class="headerlink" title="Types and Targets"></a>Types and Targets<a class="article-anchor" href="#Types-and-Targets" aria-hidden="true"></a></h2><h3 id="Picking-Resource-Types" class="article-heading"><a href="#Picking-Resource-Types" class="headerlink" title="Picking Resource Types"></a>Picking Resource Types<a class="article-anchor" href="#Picking-Resource-Types" aria-hidden="true"></a></h3><p>Glide允许你指定你想加载的资源类型。如果你指定了一个超类型，Glide会尝试加载任何可用的子类型。比如，如果你请求的是Drawable，Glide可能会加载一个 BitmapDrawable 或一个 GifDrawable。而如果你请求的是一个GifDrawable，要么会加载出一个GifDrawable，要么报错–只要图片不是GIF的话（即使它凑巧是一个完全有效的图片也是如此）。</p>
+<p>默认请求的类型是Drawable：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).load(url)</div></pre></td></tr></table></figure>
+<p>如果要明确指定请求Bitmap：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).asBitmap()</div></pre></td></tr></table></figure>
+<p>如果要创建一个文件路径（本地图片的最佳选项）：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).asFile()</div></pre></td></tr></table></figure>
+<p>如果要下载一个远程文件到缓存然后创建文件路径：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).downloadOnly()</div><div class="line"><span class="comment">// or if you have the url already:</span></div><div class="line">Glide.with(fragment).download(url);</div></pre></td></tr></table></figure>
+<h3 id="Drawables" class="article-heading"><a href="#Drawables" class="headerlink" title="Drawables"></a>Drawables<a class="article-anchor" href="#Drawables" aria-hidden="true"></a></h3><p>Glide v3版本中的<code>GlideDrawable</code>类已经被移除，支持标准的Android <a href="https://developer.android.com/reference/android/graphics/drawable/Drawable.html" target="_blank" rel="external"><code>Drawable</code></a>。 <code>GlideBitmapDrawable</code>也已经被删除，由<a href="https://developer.android.com/reference/android/graphics/drawable/BitmapDrawable.html" target="_blank" rel="external"><code>BitmapDrawable</code></a>代替之。</p>
+<p>如果你想知道某个Drawable是否是动画(animated)，可以检查它是否为<a href="https://developer.android.com/reference/android/graphics/drawable/Animatable.html" target="_blank" rel="external"><code>Animatable</code></a>的实例。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">boolean</span> isAnimated = drawable <span class="keyword">instanceof</span> Animatable;</div></pre></td></tr></table></figure>
+<h3 id="Targets" class="article-heading"><a href="#Targets" class="headerlink" title="Targets"></a>Targets<a class="article-anchor" href="#Targets" aria-hidden="true"></a></h3><p><code>onResourceReady</code>方法的签名做了一些修改。例如，对于 <code>Drawables</code>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">onResourceReady(GlideDrawable drawable, GlideAnimation&lt;? <span class="keyword">super</span> GlideDrawable&gt; anim)</div></pre></td></tr></table></figure>
+<p>现在改为:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">onResourceReady(Drawable drawable, Transition&lt;? <span class="keyword">super</span> Drawable&gt; transition);</div></pre></td></tr></table></figure>
+<p>类似地, <code>onLoadFailed</code>的签名也有一些变动：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">onLoadFailed(Exception e, Drawable errorDrawable)</div></pre></td></tr></table></figure></p>
+<p>改为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">onLoadFailed(Drawable errorDrawable)</div></pre></td></tr></table></figure>
+<p>If you need more information about the errors that caused the load to fail, you can use [<code>RequestListener</code>][21].<br>如果你想要获得更多导致加载失败的错误信息，你可以使用[<code>RequestListener</code>][21]。</p>
+<h4 id="Cancellation" class="article-heading"><a href="#Cancellation" class="headerlink" title="Cancellation"></a>Cancellation<a class="article-anchor" href="#Cancellation" aria-hidden="true"></a></h4><p><code>Glide.clear(Target)</code>方法被移动到了[<code>RequestManager</code>][22]中:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Glide.with(fragment).clear(target)</div></pre></td></tr></table></figure>
+<p>使用<code>RequestManager</code>清除之前由它启动的加载过程，通常能提高性能，虽然这并不是强制要求的。Glide v4会为每一个Activity和Fragment跟踪请求，所以你需要在合适的层级去清除请求。</p>
+<h2 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h2><p>在Glide v3中，配置使用一个或多个[<code>GlideModule</code>][1]来完成。而在Glide v4中，配置改为使用一个类似但稍微复杂的系统来完成。</p>
+<p>关于这个新系统的细节，可以查看<a href="configuration.html">配置</a>页面。</p>
+<h3 id="Applications" class="article-heading"><a href="#Applications" class="headerlink" title="Applications"></a>Applications<a class="article-anchor" href="#Applications" aria-hidden="true"></a></h3><p>在早期版本中使用了一个[<code>GlideModule</code>][1]的应用，可以将它转换为一个[<code>AppGlideModule</code>][2]。</p>
+<p>在Glide v3中，你可能会有一个像这样的<code>GlideModule</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GiphyGlideModule</span> <span class="keyword">implements</span> <span class="title">GlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    builder.setMemoryCache(<span class="keyword">new</span> LruResourceCache(<span class="number">10</span> * <span class="number">1024</span> * <span class="number">1024</span>));</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.append(Api.GifResult.class, InputStream.class, <span class="keyword">new</span> GiphyModelLoader.Factory());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在Glide v4中，你需要将其转换成一个<code>AppGlideModule</code>，它看起来像这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GiphyGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    builder.setMemoryCache(<span class="keyword">new</span> LruResourceCache(<span class="number">10</span> * <span class="number">1024</span> * <span class="number">1024</span>));</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.append(Api.GifResult.class, InputStream.class, <span class="keyword">new</span> GiphyModelLoader.Factory());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请注意，<code>@GlideModule</code>注解不能省略。</p>
+<p>如果你的应用拥有多个<code>GlideModule</code>，你需要把其中一个转换成<code>AppGlideModule</code>，剩下的转换成[<code>LibraryGlideModule</code>][3]。除非存在<code>AppGlideModule</code>，否则程序不会发现<code>LibraryGlideModule</code>，因此您不能仅使用<code>LibraryGlideModule</code>。</p>
+<h3 id="Libraries" class="article-heading"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries<a class="article-anchor" href="#Libraries" aria-hidden="true"></a></h3><p>拥有一个或多个<code>GlideModule</code>的程序库应该使用[<code>LibraryGlideModule</code>][3]。程序库不应该使用[<code>AppGlideModule</code>][2]，因为它在一个应用里只能有一个。因此，如果你试图在程序库里使用它，将不仅会妨碍这个库的用户设置自己的选项，还会在多个程序库都这么做时造成冲突。</p>
+<p>例如，v3版本中Volley集成库的<code>GlideModule</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VolleyGlideModule</span> <span class="keyword">implements</span> <span class="title">GlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">applyOptions</span><span class="params">(Context context, GlideBuilder builder)</span> </span>&#123;</div><div class="line">    <span class="comment">// Do nothing.</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.replace(GlideUrl.class, InputStream.class, <span class="keyword">new</span> VolleyUrlLoader.Factory(context));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在v4版本中可以转换成为一个<code>LibraryGlideModule</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VolleyLibraryGlideModule</span> <span class="keyword">extends</span> <span class="title">LibraryGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerComponents</span><span class="params">(Context context, Registry registry)</span> </span>&#123;</div><div class="line">    registry.replace(GlideUrl.class, InputStream.class, <span class="keyword">new</span> VolleyUrlLoader.Factory(context));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Manifest-parsing" class="article-heading"><a href="#Manifest-parsing" class="headerlink" title="Manifest parsing"></a>Manifest parsing<a class="article-anchor" href="#Manifest-parsing" aria-hidden="true"></a></h3><p>为了简化迁移过程，尽管清单解析和旧的[<code>GlideModule</code>][1]接口已被废弃，但它们在v4版本中仍被支持。<code>AppGlideModule</code>，<code>LibraryGlideModule</code>，与已废弃的<code>GlideModule</code>可以在一个应用中共存。</p>
+<p>然而，为了避免检查元数据的性能天花板（以及相关的bugs），你可以在迁移完成后禁用掉清单解析，<br>具体办法是在你的<code>AppGlideModule</code>中复写一个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@GlideModule</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GiphyGlideModule</span> <span class="keyword">extends</span> <span class="title">AppGlideModule</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isManifestParsingEnabled</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="using-ModelLoader-StreamModelLoader" class="article-heading"><a href="#using-ModelLoader-StreamModelLoader" class="headerlink" title="using(), ModelLoader, StreamModelLoader."></a><code>using()</code>, ModelLoader, StreamModelLoader.<a class="article-anchor" href="#using-ModelLoader-StreamModelLoader" aria-hidden="true"></a></h3><h4 id="ModelLoader" class="article-heading"><a href="#ModelLoader" class="headerlink" title="ModelLoader"></a>ModelLoader<a class="article-anchor" href="#ModelLoader" aria-hidden="true"></a></h4><p>[<code>ModelLoader</code>][26]API在v4版本中仍然存在，并且它的设计目标仍然和它在v3中一样，但有一些细节变化。</p>
+<p>第一个细节，<code>ModelLoader</code>的子类型如<code>StreamModelLoader</code>，现在已没有存在的必要，用户可以直接实现<code>ModelLoader</code>。例如，一个<code>StreamModelLoader&lt;File&gt;</code>类现在可以通过<code>ModelLoader&lt;File, InputStream&gt;</code>的方式来实现和引用。</p>
+<p>第二，<code>ModelLoader</code>现在并不直接返回<code>DataFetcher</code>，而是返回[<code>LoadData</code>][27]。[<code>LoadData</code>]是一个非常简单的封装，包含一个磁盘缓存键和一个<code>DataFetcher</code>。</p>
+<p>第三，<code>ModelLoaders</code>有一个<code>handles()</code>方法，这使你可以为同一个类型参数注册超过一个的ModelLoader。</p>
+<p>将一个 <code>ModelLoader</code> 从 v3 API转换到 v4 API，通常是很简单直接的。如果你在你的v3  <code>ModelLoader</code>中只是简单滴返回一个<code>DataFetcher</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModelLoader</span> <span class="keyword">implements</span> <span class="title">StreamModelLoader</span>&lt;<span class="title">File</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> DataFetcher&lt;InputStream&gt; <span class="title">getResourceFetcher</span><span class="params">(File model, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MyDataFetcher(model);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那么你在v4替代类上需要做的仅仅只是封装一下这个data fetcher：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModelLoader</span> <span class="keyword">implements</span> <span class="title">ModelLoader</span>&lt;<span class="title">File</span>, <span class="title">InputStream</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> LoadData&lt;InputStream&gt; <span class="title">buildLoadData</span><span class="params">(File model, <span class="keyword">int</span> width, <span class="keyword">int</span> height,</span></span></div><div class="line"><span class="function"><span class="params">      Options options)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> LoadData&lt;&gt;(model, <span class="keyword">new</span> MyDataFetcher(model));</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handles</span><span class="params">(File model)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请注意，除了“DataFetcher”之外，模型也被传递给“LoadData”作为缓存键的一部分。这个规则为某些特殊场景提供了更多对磁盘缓存键的控制。大部分实现可以直接将model传入<code>LoadData</code>，就像上面这样。</p>
+<p>如果你仅仅是想为某些model（而不是所有）使用你的ModelLoader，你可以在你尝试加载model之前使用<code>handles()</code>方法来检查它。如果你从<code>handles</code>方法中返回了<code>false</code>，那么你的<code>ModelLoader</code>将不能加载指定的model，即使你的<code>ModelLoader</code>类型(在这个例子里是<code>File</code>和<code>InputStream</code>)与之匹配。</p>
+<p>举个例子，如果你在某个指定文件夹下写入了加密的图片，你可以使用<code>handles</code>方法来实现一个<code>ModelLoader</code>以从那个特定的文件夹下解密图片，但是并不用于加载其他文件夹下的<code>File</code>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModelLoader</span> <span class="keyword">implements</span> <span class="title">ModelLoader</span>&lt;<span class="title">File</span>, <span class="title">InputStream</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENCRYPTED_PATH = <span class="string">"/my/encrypted/folder"</span>;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> LoadData&lt;InputStream&gt; <span class="title">buildLoadData</span><span class="params">(File model, <span class="keyword">int</span> width, <span class="keyword">int</span> height,</span></span></div><div class="line"><span class="function"><span class="params">      Options options)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> LoadData&lt;&gt;(model, <span class="keyword">new</span> MyDataFetcher(model));</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handles</span><span class="params">(File model)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> model.getAbsolutePath().startsWith(ENCRYPTED_PATH);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="using" class="article-heading"><a href="#using" class="headerlink" title="using()"></a><code>using()</code><a class="article-anchor" href="#using" aria-hidden="true"></a></h4><p><code>using</code> API在 Glide v4 中被删除了，这是为了鼓励用户使用[<code>AppGlideModule</code>][2]一次性地[注册][24]所有组件，避免对象重用(re-use, 原文如此 –译者注)。你无需每次加载图片时都创建一个新的<code>ModelLoader</code>；你应该在[<code>AppGlideModule</code>][2]中注册一次，然后交给Glide在每次加载时检查model(即你传入[<code>load()</code>][25]方法的对象)来决定什么时候使用你注册的<code>`ModelLoader</code>。</p>
+<p>为了确保你仅为特定的model使用你的<code>ModelLoader</code>，请像上面展示的那样实现<code>handles</code>方法：检查每个model，但仅在应当使用你的<code>ModelLoader</code>时才返回true。</p>
+<p>[1]: /glide/javadocs/360/com/bumptech/glide/module/GlideModule.html<br>[2]: /glide/javadocs/400/com/bumptech/glide/module/AppGlideModule.html<br>[3]: /glide/javadocs/400/com/bumptech/glide/module/LibraryGlideModule.html</p>
+<p>[5]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html<br>[6]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#thumbnail-com.bumptech.glide.RequestBuilder-<br>[7]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#listener-com.bumptech.glide.request.RequestListener-<br>[8]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#into-Y-<br>[9]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#preload-int-int-<br>[10]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html</p>
+<p>[12]: /glide/javadocs/400/com/bumptech/glide/annotation/GlideExtension.html<br>[13]: /glide/javadocs/400/com/bumptech/glide/load/resource/bitmap/BitmapTransitionOptions.html<br>[14]: /glide/javadocs/400/com/bumptech/glide/GenericTransitionOptions.html<br>[15]: /glide/javadocs/400/com/bumptech/glide/load/resource/drawable/DrawableTransitionOptions.html<br>[16]: /glide/javadocs/400/com/bumptech/glide/load/resource/bitmap/BitmapTransitionOptions.html<br>[17]: /glide/javadocs/400/com/bumptech/glide/TransitionOptions.html#dontTransition–</p>
+<p>[21]: /glide/javadocs/400/com/bumptech/glide/request/RequestListener.html<br>[22]: /glide/javadocs/400/com/bumptech/glide/RequestManager.html<br>[23]: /glide/javadocs/380/com/bumptech/glide/RequestManager.html#using(com.bumptech.glide.load.model.stream.StreamByteArrayLoader)<br>[24]: /glide/doc/generatedapi.html<br>[25]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#load-java.lang.Object-<br>[26]: /glide/javadocs/400/com/bumptech/glide/load/model/ModelLoader.html<br>[27]: /glide/javadocs/400/com/bumptech/glide/load/model/ModelLoader.LoadData.html</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选项-Options"><span class="toc-text">选项(Options)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestBuilder"><span class="toc-text">RequestBuilder</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestOptions"><span class="toc-text">RequestOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TransitionOptions"><span class="toc-text">TransitionOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generated-API"><span class="toc-text">Generated API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Types-and-Targets"><span class="toc-text">Types and Targets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Picking-Resource-Types"><span class="toc-text">Picking Resource Types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Drawables"><span class="toc-text">Drawables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Targets"><span class="toc-text">Targets</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cancellation"><span class="toc-text">Cancellation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications"><span class="toc-text">Applications</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Libraries"><span class="toc-text">Libraries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manifest-parsing"><span class="toc-text">Manifest parsing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#using-ModelLoader-StreamModelLoader"><span class="toc-text">using(), ModelLoader, StreamModelLoader.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ModelLoader"><span class="toc-text">ModelLoader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#using"><span class="toc-text">using()</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link current">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>

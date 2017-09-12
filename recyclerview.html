@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>RecyclerView | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/recyclerview.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="RecyclerViewThe RecyclerView library adds a class that will automatically load images just ahead of where a user is scrolling in a RecyclerView. Combined with the right image size and an effective dis">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RecyclerView">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/recyclerview.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="RecyclerViewThe RecyclerView library adds a class that will automatically load images just ahead of where a user is scrolling in a RecyclerView. Combined with the right image size and an effective dis">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RecyclerView">
+<meta name="twitter:description" content="RecyclerViewThe RecyclerView library adds a class that will automatically load images just ahead of where a user is scrolling in a RecyclerView. Combined with the right image size and an effective dis"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">RecyclerView</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/recyclerview.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="RecyclerView" class="article-heading"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView<a class="article-anchor" href="#RecyclerView" aria-hidden="true"></a></h3><p>The RecyclerView library adds a class that will automatically load images just ahead of where a user is scrolling in a RecyclerView. Combined with the right image size and an effective disk cache strategy, this library can dramatically decrease the number of loading tiles/indicators users see when scrolling through lists of images.<br>RecyclerView库添加了一个类，这个类会在用户滑动RecycelrView时自动加载滑动位置之前的图片。配合使用正确的图片尺寸和合适的磁盘缓存策略，这个库可以在用户滑动图片列表时显著减少用户看到的加载指示器的数量。</p>
+<p><strong>代码在这里:</strong><br><a href="https://github.com/bumptech/glide/tree/master/integration/recyclerview" target="_blank" rel="external">https://github.com/bumptech/glide/tree/master/integration/recyclerview</a></p>
+<p><strong>Gradle 依赖:</strong><br><figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">compile (<span class="string">"com.github.bumptech.glide:recyclerview-integration:4.0.0"</span>) &#123;</div><div class="line">  <span class="comment">// Excludes the support library because it's already included by Glide.</span></div><div class="line">  transitive = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RecyclerView"><span class="toc-text">RecyclerView</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link current">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>

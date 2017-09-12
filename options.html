@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Options | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/options.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Options">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/options.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Options">
+<meta name="twitter:description" content="RequestOptionsGlide中的大部分设置项都可以通过[RequestOptions][1]类和[apply()][2]方法来应用到程序中。 使用request options可以实现（包括但不限于）：  占位符(Placeholders) 转换(Transformations) 缓存策略(Caching Strategies) 组件特有的设置项，例如编码质量，或Bitmap的解码配置等"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Options</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/options.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="RequestOptions" class="article-heading"><a href="#RequestOptions" class="headerlink" title="RequestOptions"></a>RequestOptions<a class="article-anchor" href="#RequestOptions" aria-hidden="true"></a></h3><p>Glide中的大部分设置项都可以通过[<code>RequestOptions</code>][1]类和[<code>apply()</code>][2]方法来应用到程序中。</p>
+<p>使用<code>request options</code>可以实现（包括但不限于）：</p>
+<ul>
+<li>占位符(<code>Placeholders</code>)</li>
+<li>转换(<code>Transformations</code>)</li>
+<li>缓存策略(<code>Caching Strategies</code>)</li>
+<li>组件特有的设置项，例如编码质量，或<code>Bitmap</code>的解码配置等。</li>
+</ul>
+<p>例如，要应用一个[<code>CenterCrop</code>][3] [转换][4]，你可以使用以下代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.bumptech.glide.request.RequestOptions.centerCropTransform;</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(centerCropTransform(context))</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<p>在这个例子中使用了对<code>RequestOptions</code>类里的方法的静态import，这会让代码看起来更简洁流畅。</p>
+<p>如果你想让你的应用的不同部分之间共享相同的加载选项，你也可以初始化一个新的<code>RequestOptions</code>对象，并在每次加载时传入这个对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions cropOptions = <span class="keyword">new</span> RequestOptions().centerCrop(context);</div><div class="line">...</div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .apply(cropOptions)</div><div class="line">    .into(imageView);</div></pre></td></tr></table></figure>
+<p>[<code>apply()</code>][2] 方法可以被调用多次，因此<code>RequestOption</code>可以被组合使用。如果<code>RequestOptions</code>对象之间存在相互冲突的设置，那么只有最后一个被应用的 <code>RequestOptions</code>会生效。</p>
+<h3 id="TransitionOptions" class="article-heading"><a href="#TransitionOptions" class="headerlink" title="TransitionOptions"></a>TransitionOptions<a class="article-anchor" href="#TransitionOptions" aria-hidden="true"></a></h3><p>[TransitionOptions][5]用于决定你的加载完成时会发生什么。</p>
+<p>使用<code>TransitionOption</code>可以应用以下变换：</p>
+<ul>
+<li>View淡入</li>
+<li>与占位符交叉淡入</li>
+<li>或者什么都不发生</li>
+</ul>
+<p>如果不使用变换，你的图像将会“跳入”其显示位置，直接替换掉之前的图像。为了避免这种突然的改变，你可以淡入view，或者让多个Drawable交叉淡入，而这些都需要使用<code>TransitionOptions</code>完成。</p>
+<p>例如，要应用一个交叉淡入变换：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;</div><div class="line"></div><div class="line">Glide.with(fragment)</div><div class="line">    .load(url)</div><div class="line">    .transition(withCrossFade())</div><div class="line">    .into(view);</div></pre></td></tr></table></figure>
+<p>不同于<code>RequestOptions</code>，<code>TransitionOptions</code>是特定资源类型独有的，你能使用的变换取决于你让Glide加载哪种类型的资源。</p>
+<p>这样的结果是，假如你请求加载一个<code>Bitmap</code>，你需要使用[BitmapTransitionOptions][6]，而不是[DrawableTransitionOptions][7]。同样，当你请求加载<code>Bitmap</code>时，你只需要做简单的淡入，而不需要做复杂的交叉淡入。</p>
+<h3 id="RequestBuilder" class="article-heading"><a href="#RequestBuilder" class="headerlink" title="RequestBuilder"></a>RequestBuilder<a class="article-anchor" href="#RequestBuilder" aria-hidden="true"></a></h3><p>[RequestBuilder][8]是Glide中请求的骨架，负责携带请求的url和你的设置项来开始一个新的加载过程。</p>
+<p>使用<code>RequestBuilder</code>可以指定：</p>
+<ul>
+<li>你想加载的资源类型(Bitmap, Drawable, 或其他)</li>
+<li>你要加载的资源地址(url/model)</li>
+<li>你想最终加载到的View</li>
+<li>任何你想应用的（一个或多个）<code>RequestOption</code>对象</li>
+<li>任何你想应用的（一个或多个）<code>TransitionOption</code>对象</li>
+<li>任何你想加载的缩略图 [<code>thumbnail()</code>][9]</li>
+</ul>
+<p>你可以通过调用<code>Glide.with()</code>来构造一个<code>RequestBuilder</code>对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder = Glide.with(fragment);</div></pre></td></tr></table></figure>
+<h4 id="Picking-a-resource-type" class="article-heading"><a href="#Picking-a-resource-type" class="headerlink" title="Picking a resource type"></a>Picking a resource type<a class="article-anchor" href="#Picking-a-resource-type" aria-hidden="true"></a></h4><p><code>RequestBuilders</code>是特定于它们将要加载的资源类型的。默认情况下你会得到一个Drawable RequestBuilder，但你可以使用<code>as...</code>系列方法来改变请求类型。例如，如果你调用了<code>asBitmap()</code>，你就将获得一个``Bitmap<figure class="highlight plain"><figcaption><span>RequestBuilder。</span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">```java</div><div class="line">RequestBuilder&lt;Bitmap&gt; requestBuilder = Glide.with(fragment).asBitmap();</div></pre></td></tr></table></figure></p>
+<h4 id="Applying-RequestOptions" class="article-heading"><a href="#Applying-RequestOptions" class="headerlink" title="Applying RequestOptions"></a>Applying RequestOptions<a class="article-anchor" href="#Applying-RequestOptions" aria-hidden="true"></a></h4><p>前面提到，可以使用[<code>apply()</code>][2] 方法应用<code>RequestOptions</code>，使用[<code>transition()</code>][10]方法应用<code>TransitionOptions</code>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder = Glide.with(fragment);</div><div class="line">requestBuilder.apply(requestOptions);</div><div class="line">requestBuilder.transition(transitionOptions);</div></pre></td></tr></table></figure>
+<p>RequestBuilder也可以被复用于开始多个请求：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestBuilder&lt;Drawable&gt; requestBuilder =</div><div class="line">        Glide.with(fragment)</div><div class="line">            .asDrawable()</div><div class="line">            .apply(requestOptions);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numViews; i++) &#123;</div><div class="line">   ImageView view = viewGroup.getChildAt(i);</div><div class="line">   String url = urls.get(i);</div><div class="line">   requestBuilder.load(url).into(view);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Component-Options" class="article-heading"><a href="#Component-Options" class="headerlink" title="Component Options"></a>Component Options<a class="article-anchor" href="#Component-Options" aria-hidden="true"></a></h3><p>[<code>Option</code>][11]类是给Glide的组件添加参数的通用办法，包括[<code>ModelLoaders</code>][12], [<code>ResourceDecoders</code>][13], [<code>ResourceEncoders</code>][14], [<code>Encoders</code>][15]等等。一些Glide的内置组件提供了设置项，自定义的组件也可以添加设置项。</p>
+<p><code>Option</code>通过<code>RequestOptions</code>类应用到请求上：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.bumptech.glide.request.RequestOptions.option;</div><div class="line"></div><div class="line">Glide.with(context)</div><div class="line">  .load(url)</div><div class="line">  .apply(option(MyCustomModelLoader.TIMEOUT_MS, <span class="number">1000L</span>))</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
+<p>你也可以创建一个全新的RequestOptions对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">RequestOptions options = <span class="keyword">new</span> RequestOptions()</div><div class="line">  .set(MyCustomModelLoader.TIMEOUT_MS, <span class="number">1000L</span>);</div><div class="line"></div><div class="line">Glide.with(context)</div><div class="line">  .load(url)</div><div class="line">  .apply(options)</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
+<p>或者使用[生成的API][16]：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(context)</div><div class="line">  .load(url)</div><div class="line">  .set(MyCustomModelLoader.TIMEOUT_MS, <span class="number">1000L</span>)</div><div class="line">  .into(imageView);</div></pre></td></tr></table></figure>
+<p>[1]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html<br>[2]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#apply-com.bumptech.glide.request.RequestOptions-<br>[3]: /glide/javadocs/400/com/bumptech/glide/load/resource/bitmap/CenterCrop.html<br>[4]: /glide/javadocs/400/com/bumptech/glide/load/Transformation.html<br>[5]: /glide/javadocs/400/com/bumptech/glide/TransitionOptions.html<br>[6]: /glide/javadocs/400/com/bumptech/glide/load/resource/bitmap/BitmapTransitionOptions.html<br>[7]: /glide/javadocs/400/com/bumptech/glide/load/resource/drawable/DrawableTransitionOptions.html<br>[8]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html<br>[9]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#thumbnail-com.bumptech.glide.RequestBuilder-<br>[10]: /glide/javadocs/400/com/bumptech/glide/RequestBuilder.html#transition-com.bumptech.glide.TransitionOptions-<br>[11]: /glide/javadocs/400/com/bumptech/glide/load/Option.html<br>[12]: /glide/javadocs/400/com/bumptech/glide/load/model/ModelLoader.html<br>[13]: /glide/javadocs/400/com/bumptech/glide/load/ResourceDecoder.html<br>[14]: /glide/javadocs/400/com/bumptech/glide/load/ResourceEncoder.html<br>[15]: /glide/javadocs/400/com/bumptech/glide/load/Encoder.html<br>[16]: /glide/doc/generatedapi.html</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestOptions"><span class="toc-text">RequestOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TransitionOptions"><span class="toc-text">TransitionOptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestBuilder"><span class="toc-text">RequestBuilder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Picking-a-resource-type"><span class="toc-text">Picking a resource type</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Applying-RequestOptions"><span class="toc-text">Applying RequestOptions</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Component-Options"><span class="toc-text">Component Options</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link">占位符</a><a href="options.html" class="sidebar-link current">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>

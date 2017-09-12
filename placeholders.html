@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Placeholders | Glide v4 中文站</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://muyangmin.github.io/glide-docs-cn/placeholders.html">
+  <!-- Alternative links -->
+  
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/glide-docs-cn/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/glide-docs-cn/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/glide-docs-cn/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/glide-docs-cn/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/glide-docs-cn/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/glide-docs-cn/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/glide-docs-cn/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/glide-docs-cn/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/glide-docs-cn/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/glide-docs-cn/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/glide-docs-cn/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/glide-docs-cn/atom.xml" title="Glide v4 中文站">
+  <!-- Open Graph -->
+  <!-- <meta name="description" content="TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置error Drawa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Placeholders">
+<meta property="og:url" content="https://muyangmin.github.io/glide-docs-cn/placeholders.html">
+<meta property="og:site_name" content="Glide v4 中文站">
+<meta property="og:description" content="TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置error Drawa">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-09-11T10:19:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Placeholders">
+<meta name="twitter:description" content="TypesGlide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：  [placeholder][1] [error][2] [fallback][3]  Placeholder占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置error Drawa"> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Placeholders</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/placeholders.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="Types" class="article-heading"><a href="#Types" class="headerlink" title="Types"></a>Types<a class="article-anchor" href="#Types" aria-hidden="true"></a></h3><p>Glide允许用户指定三种不同类型的占位符，分别在三种不同场景使用：</p>
+<ul>
+<li>[placeholder][1]</li>
+<li>[error][2]</li>
+<li>[fallback][3]</li>
+</ul>
+<h4 id="Placeholder" class="article-heading"><a href="#Placeholder" class="headerlink" title="Placeholder"></a>Placeholder<a class="article-anchor" href="#Placeholder" aria-hidden="true"></a></h4><p>占位符是当请求正在执行时被展示的Drawable。当请求成功完成时，占位符会被请求到的资源替换。如果被请求的资源是从内存中加载出来的，那么占位符可能根本不会被显示。如果请求失败并且没有设置<code>error Drawable</code>，则占位符将被持续展示。类似地，如果请求的url/model为<code>null</code>，并且<code>error Drawable</code>和<code>fallback</code>都没有设置，那么占位符也会继续显示。</p>
+<p>使用<a href="generatedapi.html">generated API</a>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .placeholder(R.drawable.placeholder)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>Or:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .placeholder(<span class="keyword">new</span> ColorDrawable(Color.BLACK))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<h4 id="Error" class="article-heading"><a href="#Error" class="headerlink" title="Error"></a>Error<a class="article-anchor" href="#Error" aria-hidden="true"></a></h4><p><code>error Drawable</code>在请求永久性失败时展示。<code>error Drawable</code>同样也在请求的url/model为<code>null</code>，且并没有设置<code>fallback Drawable</code>时展示。</p>
+<p>With the <a href="generatedapi.html">generated API</a>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .error(R.drawable.error)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>Or:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .error(<span class="keyword">new</span> ColorDrawable(Color.RED))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<h4 id="Fallback" class="article-heading"><a href="#Fallback" class="headerlink" title="Fallback"></a>Fallback<a class="article-anchor" href="#Fallback" aria-hidden="true"></a></h4><p><code>fallback Drawable</code>在请求的url/model为<code>null</code>时展示。设计<code>fallback Drawable</code>的主要目的是允许用户指示<code>null</code>是否为可接受的正常情况。例如，一个<code>null</code>的个人资料url可能暗示这个用户没有设置头像，因此应该使用默认头像。然而，<code>null</code>也可能表明这个元数据根本就是不合法的，或者取不到。<br>默认情况下Glide将<code>null</code>作为错误处理，所以可以接受<code>null</code>的应用应当显式地设置一个<code>fallback Drawable</code>。</p>
+<p>使用<a href="generatedapi.html">generated API</a>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .fallback(R.drawable.fallback)</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<p>Or:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">GlideApp.with(fragment)</div><div class="line">  .load(url)</div><div class="line">  .fallback(<span class="keyword">new</span> ColorDrawable(Color.GREY))</div><div class="line">  .into(view);</div></pre></td></tr></table></figure>
+<h3 id="FAQ" class="article-heading"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ<a class="article-anchor" href="#FAQ" aria-hidden="true"></a></h3><h5 id="占位符是异步加载的吗？" class="article-heading"><a href="#占位符是异步加载的吗？" class="headerlink" title="占位符是异步加载的吗？"></a>占位符是异步加载的吗？<a class="article-anchor" href="#占位符是异步加载的吗？" aria-hidden="true"></a></h5><p>No。占位符是在主线程从Android Resources加载的。我们通常希望占位符比较小且容易被系统资源缓存机制缓存起来。</p>
+<h5 id="transfomation是否会被应用到占位符上？" class="article-heading"><a href="#transfomation是否会被应用到占位符上？" class="headerlink" title="transfomation是否会被应用到占位符上？"></a>transfomation是否会被应用到占位符上？<a class="article-anchor" href="#transfomation是否会被应用到占位符上？" aria-hidden="true"></a></h5><p>No。Transformation仅被应用于被请求的资源，而不会对任何占位符使用。例如你正在加载圆形图片，你可能希望在你的应用中包含圆形的占位符。但是你也可以考虑自定义一个View来剪裁(clip)你的占位符，达到你的transformation的效果。</p>
+<h5 id="在多个不同的View上使用相同的Drawable可行么？" class="article-heading"><a href="#在多个不同的View上使用相同的Drawable可行么？" class="headerlink" title="在多个不同的View上使用相同的Drawable可行么？"></a>在多个不同的View上使用相同的Drawable可行么？<a class="article-anchor" href="#在多个不同的View上使用相同的Drawable可行么？" aria-hidden="true"></a></h5><p>通常可以，但不是绝对的。任何无状态(<code>non-stateful</code>)的Drawable（例如<code>BitmapDrawable</code>）通常都是ok的。但是有状态的Drawable不一样，在同一时间多个View上展示它们通常不是很安全，因为多个View会立刻修改(<code>mutate</code>)Drawable。对于有状态的Drawable，建议传入一个资源ID，或者使用<code>newDrawable()</code>来给每个请求传入一个新的拷贝。</p>
+<p>[1]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#placeholder-int-<br>[2]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#error-int-<br>[3]: /glide/javadocs/400/com/bumptech/glide/request/RequestOptions.html#fallback-int-</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-09-11T10:19:53.000Z" itemprop="dateModified">上次更新：2017-09-11</time>
+                
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Types"><span class="toc-text">Types</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Placeholder"><span class="toc-text">Placeholder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Error"><span class="toc-text">Error</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fallback"><span class="toc-text">Fallback</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#占位符是异步加载的吗？"><span class="toc-text">占位符是异步加载的吗？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#transfomation是否会被应用到占位符上？"><span class="toc-text">transfomation是否会被应用到占位符上？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在多个不同的View上使用相同的Drawable可行么？"><span class="toc-text">在多个不同的View上使用相同的Drawable可行么？</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">首页</strong><a href="index.html" class="sidebar-link">关于Glides</a><strong class="sidebar-title">文档</strong><a href="download-setup.html" class="sidebar-link">下载和初始化</a><a href="getting-started.html" class="sidebar-link">开始使用</a><a href="generatedapi.html" class="sidebar-link">生成的API</a><a href="placeholders.html" class="sidebar-link current">占位符</a><a href="options.html" class="sidebar-link">选项</a><a href="transformations.html" class="sidebar-link">变换</a><a href="targets.html" class="sidebar-link">目标</a><a href="transitions.html" class="sidebar-link">过渡</a><a href="configurations.html" class="sidebar-link">配置</a><a href="caching.html" class="sidebar-link">缓存</a><a href="debugging.html" class="sidebar-link">调试</a><a href="migrating.html" class="sidebar-link">从v3迁移到v4</a><strong class="sidebar-title">其他指南</strong><a href="http://bumptech.github.io/glide/ref/javadocs.html" class="sidebar-link">Javadocs</a><a href="samples.html" class="sidebar-link">示例项目</a><strong class="sidebar-title">集成库</strong><a href="about.html" class="sidebar-link">关于集成库</a><a href="okhttp3.html" class="sidebar-link">OkHttp3</a><a href="volley.html" class="sidebar-link">Volley</a><a href="recyclerview.html" class="sidebar-link">RecyclerView</a><strong class="sidebar-title">开发者</strong><a href="snapshots.html" class="sidebar-link">快照版本</a><a href="contributing.html" class="sidebar-link">贡献代码</a><a href="http://bumptech.github.io/glide/dev/open-source-licenses.html" class="sidebar-link">开源许可证</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2017 <a href="https://github.com//graphs/contributors" target="_blank">Muyangmin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      
+
+      
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/glide-docs-cn/js/toc.js"></script>
+<!-- endbuild -->
+</body>
+</html>
